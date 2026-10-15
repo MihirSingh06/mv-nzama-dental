@@ -5,6 +5,31 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>MV Nzama Dental | Family Dentist in Montclair, Durban</title>
 <meta name="description" content="MV Nzama Dental is a family-centred dental practice in Montclair, Durban. Book online, by phone, WhatsApp or in person.">
+<meta name="theme-color" content="#2a9d44">
+<meta property="og:type" content="website">
+<meta property="og:title" content="MV Nzama Dental | Family Dentist in Montclair, Durban">
+<meta property="og:description" content="Family-centred dental care in Montclair: check-ups, fillings, extractions, root canals, crowns, dentures and whitening. Book online, by phone or WhatsApp.">
+<meta property="og:locale" content="en_ZA">
+<!-- TODO when the domain is live: add <meta property="og:image" content="https://YOUR-DOMAIN/images/waiting-room.jpg"> and <meta property="og:url" ...> -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Dentist",
+  "name": "MV Nzama Dental",
+  "slogan": "We honour your trust",
+  "description": "Family-centred dental practice offering consultations, dental radiographs, scaling and polishing, extractions, fillings, root canal treatment, crowns, bridges, dentures, veneers and teeth whitening.",
+  "telephone": "+27314621723",
+  "email": "melodious@medi.co.za",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "139 Montclair Road",
+    "addressLocality": "Montclair, Durban",
+    "postalCode": "4004",
+    "addressCountry": "ZA"
+  },
+  "medicalSpecialty": "Dentistry"
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -142,6 +167,26 @@ footer{background:var(--ink);color:#cfdcd3;padding:32px 0;font-size:.9rem}
 footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
 .fab{position:fixed;right:18px;bottom:18px;background:var(--wa);color:#073b1c;width:58px;height:58px;border-radius:50%;display:grid;place-items:center;text-decoration:none;box-shadow:0 8px 24px rgba(0,0,0,.25);z-index:20}
 .fab svg{width:30px;height:30px}
+
+.consent{display:flex;gap:10px;align-items:flex-start;font-weight:400;font-size:.82rem;color:var(--muted)}
+.consent input{width:auto;margin-top:3px}
+.consent a,.linkbtn{color:var(--green-dark);font-weight:600}
+.linkbtn{background:none;border:0;font:inherit;text-decoration:underline;cursor:pointer;color:#cfdcd3;font-weight:500}
+.review{display:none}
+.review.on{display:inline-block}
+dialog{border:0;border-radius:18px;max-width:640px;width:calc(100% - 32px);padding:28px;max-height:85vh;overflow:auto}
+dialog::backdrop{background:rgba(10,20,14,.6)}
+dialog h2{font-size:1.6rem}
+dialog h3{font-family:Inter,sans-serif;font-size:1rem;font-weight:700;margin:16px 0 4px}
+dialog p,dialog li{font-size:.92rem;color:var(--muted)}
+dialog ul{padding-left:20px}
+dialog .btn{margin-top:20px}
+.callbar{display:none}
+@media(max-width:700px){
+  .callbar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:15;background:#fff;border-top:1px solid var(--line);padding:10px 84px 10px 16px;gap:10px}
+  .callbar .btn{flex:1;padding:12px 10px}
+  body{padding-bottom:70px}
+}
 </style>
 </head>
 <body>
@@ -327,6 +372,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
         </select>
       </label>
       <label>Anything else we should know?<textarea name="notes" rows="3"></textarea></label>
+      <label class="consent"><input type="checkbox" name="consent" required> <span>I agree that MV Nzama Dental may use these details to contact me about my appointment. <a href="#privacy" data-privacy>Privacy notice</a></span></label>
       <button type="submit" class="btn btn-primary" id="submitBtn">Request appointment</button>
       <div class="send">
         <button type="button" class="btn btn-wa" id="sendWa">Send by WhatsApp</button>
@@ -349,6 +395,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
     <div class="map-actions">
       <a class="btn btn-primary" id="directions" target="_blank" rel="noopener" href="#">Get directions</a>
       <a class="btn btn-ghost" data-tel href="#">Call us</a>
+      <a class="btn btn-ghost review" id="reviewBtn" target="_blank" rel="noopener" href="#">⭐ Leave us a Google review</a>
     </div>
   </div>
 </section>
@@ -358,8 +405,33 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
   <div class="wrap">
     <span>© <span id="yr"></span> MV Nzama Dental. We honour your trust.</span>
     <span data-bind="address"></span>
+    <button class="linkbtn" type="button" data-privacy>Privacy notice</button>
   </div>
 </footer>
+
+<dialog id="privacy">
+  <h2>Privacy notice</h2>
+  <p>MV Nzama Dental respects your privacy and handles personal information in line with the Protection of Personal Information Act (POPIA).</p>
+  <h3>What we collect</h3>
+  <p>If you use our booking form we collect your name, phone number, email address (optional), preferred date and time, reason for your visit, and any notes you add.</p>
+  <h3>Why we collect it</h3>
+  <p>Only to contact you about your appointment request and to arrange your visit. We do not sell your information or use it for marketing.</p>
+  <h3>Who sees it</h3>
+  <ul>
+    <li>Our practice staff.</li>
+    <li>Our form provider (FormSubmit), which passes your request to our email. If you choose the WhatsApp or Email buttons instead, your message goes through those services.</li>
+  </ul>
+  <h3>Your rights</h3>
+  <p>You may ask to see, correct or delete the information we hold about you by contacting us on <span data-bind="phone"></span> or <span data-bind="email"></span>. If you have a complaint you can contact the Information Regulator of South Africa.</p>
+  <h3>Health information</h3>
+  <p>Please don't put detailed medical information in the booking form. Share that with us in person at your consultation.</p>
+  <button class="btn btn-primary" type="button" id="closePrivacy">Close</button>
+</dialog>
+
+<div class="callbar">
+  <a class="btn btn-primary" data-tel href="#">📞 Call us</a>
+  <a class="btn btn-wa" data-wa href="#" target="_blank" rel="noopener">WhatsApp</a>
+</div>
 
 <div class="lb" id="lb"><img alt=""></div>
 <a class="fab" data-wa href="#" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
@@ -378,7 +450,10 @@ const PRACTICE = {
   mapQuery: "139 Montclair Road, Montclair, Durban 4004",
   // Online booking delivery (free service: formsubmit.co). The first submission sends
   // an activation email to this address; click the link in it once to switch it on.
-  formEndpoint: "https://formsubmit.co/ajax/melodious@medi.co.za"
+  formEndpoint: "https://formsubmit.co/ajax/melodious@medi.co.za",
+  // Paste the Google review link from the practice's Google Business Profile
+  // ("Get more reviews" > share link). The button stays hidden while this is empty.
+  reviewUrl: ""
 };
 /* ======================================== */
 
@@ -394,6 +469,13 @@ $("#mapFrame").src = `https://www.google.com/maps?q=${enc(PRACTICE.mapQuery)}&ou
 $("#directions").href = `https://www.google.com/maps/dir/?api=1&destination=${enc(PRACTICE.mapQuery)}`;
 $("#yr").textContent = new Date().getFullYear();
 $("[name=date]").min = new Date().toISOString().split("T")[0];
+
+if(PRACTICE.reviewUrl){ $("#reviewBtn").href = PRACTICE.reviewUrl; $("#reviewBtn").classList.add("on"); }
+
+const dlg = $("#privacy");
+document.querySelectorAll("[data-privacy]").forEach(el => el.addEventListener("click", e => { e.preventDefault(); dlg.showModal(); }));
+$("#closePrivacy").onclick = () => dlg.close();
+dlg.addEventListener("click", e => { if(e.target === dlg) dlg.close(); });
 
 const lb = $("#lb");
 document.querySelectorAll("[data-zoom], .hero-collage img, .tour figure").forEach(el => el.addEventListener("click", () => {
@@ -411,6 +493,10 @@ function show(msg, ok){ status.textContent = msg; status.className = "status " +
 function valid(){
   if(!v("name") || !v("phone") || !v("date")){
     show("Please fill in your name, phone number and preferred date.", false);
+    return false;
+  }
+  if(!form.elements.consent.checked){
+    show("Please tick the box to agree to us contacting you.", false);
     return false;
   }
   return true;
