@@ -27,7 +27,7 @@ Hero collage, "ways to book" strip, Treatments (incl. in-house surgeon group), "
 ## Deployment and accounts
 - **Use the personal accounts only, never the pcg work account.** Git identity in this repo is set locally to Mihir Singh <Mihirsinghcs@gmail.com> and the global git identity is the work one. GitHub user: MihirSingh06. Vercel scope: mihirsingh06s-projects.
 - Vercel project: `dental-website`. Production URL: https://dental-website-nu-seven.vercel.app. Redeploy with `npx vercel --prod` from this folder.
-- **Vercel Authentication is ON by default, which blocks the public.** Turn it off in Project, Settings, Deployment Protection before launch.
+- **Status (end of session 1):** latest version deployed to Vercel and publicly reachable. The main link was public even while Vercel Authentication was on, and the owner has since disabled that setting, so every deployment URL is public. Anyone with the link can open the site and the booking form works for them. To hide it again before launch, take the deployment down or use paid Password Protection.
 - Git remote `origin` is https://github.com/MihirSingh06/mv-nzama-dental.git. A push has NOT succeeded yet. Windows had a saved pcg GitHub login (MihirPCG) that was refused, and it was then cleared. Run `git push -u origin main` in a normal terminal and sign in as MihirSingh06. The repo must exist first (private).
 - The Vercel project is not yet connected to the GitHub repo (connect it after the first push for auto-deploys).
 - The owner is waiting to be paid before going live, so do not publish the site or point a domain without checking.
