@@ -39,6 +39,19 @@ Hero collage, "ways to book" strip, Treatments (incl. in-house surgeon group), "
 - Add `og:image` and `og:url` once the domain is known (there is a TODO comment in `<head>`).
 - Possible additions: FAQ section (needs the practice's answers on medical aid, pricing and walk-ins), testimonials, more before/after photos, exterior photo, equipment photos, a video tour, opening hours with an "open now" badge, a phone menu button (nav links are hidden under 820px), the Umlazi branch.
 
+## Ideas saved for later
+- Clearer "request received" confirmation panel (needs the practice's usual reply time).
+- Accessibility pass: colour contrast, keyboard use, photo descriptions.
+- isiZulu / English switch (translations must be checked by a native speaker).
+- Umlazi branch: two location cards and maps, plus a "choose your branch" step in the form.
+- Real booking calendar (Cal.com or Calendly free plan) if the practice wants patients to pick slots.
+- Privacy-friendly visitor stats (Plausible or Cloudflare Analytics), including WhatsApp and call taps.
+- FAQ, testimonials, more before/after photos, exterior and equipment photos, video tour, opening hours with an "open now" badge.
+- End-to-end test of the booking form with the practice on a real phone before launch.
+
+## Done since first version
+Phone menu button (hamburger under 820px), tooth favicon (inline SVG), red emergency bar at the top ("Toothache or swelling? Call us now").
+
 ## Checks done
 Screenshots at about 390px (phone) and 820px (tablet) looked fine at the top of the page. Not tested on a real device. The map, the form submission, the WhatsApp and email buttons, and the lightbox were not tested.
 
