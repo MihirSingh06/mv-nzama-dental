@@ -1,4 +1,4 @@
-# MV Nzama Dental website
+﻿# MV Nzama Dental website
 
 Static one-page website for MV Nzama Dental, a family-centred dental practice at 139 Montclair Road, Montclair, Durban 4004. Tagline: "We honour your trust". Built for the owner (Mihir) as a client project. No build step, no framework.
 
@@ -49,6 +49,9 @@ Hero collage, "ways to book" strip, Treatments (incl. in-house surgeon group), "
 - FAQ, testimonials, more before/after photos, exterior and equipment photos, video tour, opening hours with an "open now" badge.
 - End-to-end test of the booking form with the practice on a real phone before launch.
 
+## Redesign (live since 2026-10-16)
+The client said the site "reads like a blog", so it was redesigned to be more visual. The redesign is now index.html. Order: full-screen photo hero with booking options in a strip, Our Work (Before/During/After viewer plus a CTA, scaling result), treatments as two tile panels (general / in-house surgeon), steps on a photo background, full-width photo strip (tour), single team card, booking, map. It adds scroll reveal and respects reduced motion. The viewer uses `images/smile-before|during|after.jpg`, cut from `result-2.jpg`. The previous version is in git history.
+
 ## Done since first version
 Phone menu button (hamburger under 820px), tooth favicon (inline SVG), red emergency bar at the top ("Toothache or swelling? Call us now").
 
@@ -57,3 +60,4 @@ Screenshots at about 390px (phone) and 820px (tablet) looked fine at the top of 
 
 ## Design notes
 Green palette from the practice's flyer (`--green` #2a9d44, `--green-dark` #1b6e30) with red and orange accents. Fonts: DM Serif Display and Inter (Google Fonts). Responsive breakpoints at 820px and 700px.
+

@@ -11,7 +11,7 @@
 <meta property="og:title" content="MV Nzama Dental | Family Dentist in Montclair, Durban">
 <meta property="og:description" content="Family-centred dental care in Montclair: check-ups, fillings, extractions, root canals, crowns, dentures and whitening. Book online, by phone or WhatsApp.">
 <meta property="og:locale" content="en_ZA">
-<!-- TODO when the domain is live: add <meta property="og:image" content="https://YOUR-DOMAIN/images/waiting-room.jpg"> and <meta property="og:url" ...> -->
+<!-- TODO when the domain is live: add <meta property="og:image" content="https://YOUR-DOMAIN/images/surgery-1.jpg"> and <meta property="og:url" ...> -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -34,24 +34,34 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="images/surgery-1.jpg">
+<script>document.documentElement.classList.add("js")</script>
 <style>
 :root{
-  --green:#2a9d44; --green-dark:#1b6e30; --mint:#ebf7ed; --ink:#1a2b20; --muted:#59695f;
+  --green:#2a9d44; --green-dark:#1b6e30; --deep:#0f3d1c; --mint:#ebf7ed; --ink:#1a2b20; --muted:#59695f;
   --red:#c8102e; --orange:#f5a623; --line:#d9e8dc; --wa:#25d366;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{font-family:Inter,system-ui,sans-serif;color:var(--ink);background:#fff;line-height:1.6}
-h1,h2,h3{font-family:"DM Serif Display",Georgia,serif;font-weight:400;line-height:1.2}
+body{font-family:Inter,system-ui,sans-serif;color:var(--ink);background:#fff;line-height:1.6;overflow-x:hidden}
+h1,h2,h3{font-family:"DM Serif Display",Georgia,serif;font-weight:400;line-height:1.1}
 a{color:inherit}
 img{max-width:100%;display:block}
-.wrap{max-width:1100px;margin:0 auto;padding:0 16px}
-section{padding:72px 0}
-section.alt{background:var(--mint)}
-.eyebrow{color:var(--green-dark);font-weight:700;font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:8px}
-h2{font-size:2.1rem;margin-bottom:12px}
-.lead{color:var(--muted);max-width:660px;margin-bottom:36px}
+.wrap{max-width:1160px;margin:0 auto;padding:0 16px}
+section{padding:88px 0}
+.eyebrow{color:var(--green-dark);font-weight:700;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;margin-bottom:10px}
+h2{font-size:clamp(2rem,4.2vw,3rem);margin-bottom:14px}
+.head{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:40px}
+.head p{color:var(--muted);max-width:420px}
 
+/* reveal on scroll */
+.js .rv{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
+.js .rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.js .rv{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+
+/* header */
+.alert{background:var(--red);color:#fff;text-align:center;font-size:.88rem;padding:8px 16px}
+.alert a{color:#fff;font-weight:700}
 header{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
 .nav{display:flex;align-items:center;justify-content:space-between;height:66px;gap:16px}
 .logo{text-decoration:none;line-height:1.1}
@@ -60,14 +70,14 @@ header{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.96);backdro
 .nav ul{display:flex;gap:22px;list-style:none}
 .nav ul a{text-decoration:none;font-size:.92rem;color:var(--muted)}
 .nav ul a:hover{color:var(--green)}
-.btn{display:inline-block;padding:12px 22px;border-radius:999px;font-weight:600;text-decoration:none;border:0;cursor:pointer;font-size:1rem;font-family:inherit;text-align:center}
+.btn{display:inline-block;padding:13px 24px;border-radius:999px;font-weight:600;text-decoration:none;border:0;cursor:pointer;font-size:1rem;font-family:inherit;text-align:center;transition:transform .15s,background .15s}
+.btn:hover{transform:translateY(-1px)}
 .btn-primary{background:var(--green);color:#fff}.btn-primary:hover{background:var(--green-dark)}
 .btn-ghost{border:1.5px solid var(--green);color:var(--green-dark);background:transparent}
+.btn-light{background:#fff;color:var(--green-dark)}
 .btn-wa{background:var(--wa);color:#073b1c}
 .btn-mail{background:#fff;border:1.5px solid var(--green);color:var(--green-dark)}
 .menu-btn{display:none;background:none;border:1.5px solid var(--line);border-radius:10px;width:44px;height:44px;cursor:pointer;color:var(--green-dark);font-size:1.4rem;line-height:1}
-.alert{background:var(--red);color:#fff;text-align:center;font-size:.88rem;padding:8px 16px}
-.alert a{color:#fff;font-weight:700}
 @media(max-width:820px){
   .menu-btn{display:block;margin-left:auto}
   .nav{gap:10px}
@@ -79,84 +89,119 @@ header{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.96);backdro
   .nav ul a{display:block;padding:12px 4px;font-size:1rem;border-bottom:1px solid var(--line)}
 }
 
-.hero{background:linear-gradient(160deg,var(--mint),#fff 70%);padding:80px 0 64px}
-.hero-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:48px;align-items:center}
-.hero h1{font-size:3.1rem;margin-bottom:16px}
-.hero p{color:var(--muted);font-size:1.1rem;margin-bottom:26px;max-width:520px}
+/* hero */
+.hero{position:relative;min-height:min(86vh,760px);display:flex;align-items:flex-end;color:#fff;padding:0;overflow:hidden;background:var(--deep)}
+.hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:60% 40%;animation:zoom 18s ease-out both}
+@keyframes zoom{from{transform:scale(1.08)}to{transform:scale(1)}}
+@media(prefers-reduced-motion:reduce){.hero-bg{animation:none}}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(10,40,18,.92) 0%,rgba(10,40,18,.72) 42%,rgba(10,40,18,.15) 100%),linear-gradient(0deg,rgba(10,40,18,.7),transparent 45%)}
+.hero .wrap{position:relative;z-index:1;width:100%;padding-top:96px;padding-bottom:36px}
+.hero .eyebrow{color:#a8e6b4}
+.hero h1{font-size:clamp(2.7rem,6.4vw,5rem);max-width:640px;margin-bottom:18px}
+.hero h1 em{font-style:normal;color:#a8e6b4}
+.hero p.sub{font-size:1.15rem;max-width:480px;color:#e1f2e5;margin-bottom:30px}
 .hero-actions{display:flex;gap:12px;flex-wrap:wrap}
-.hero-collage{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:230px 150px;gap:12px}
-.hero-collage img{width:100%;height:100%;object-fit:cover;border-radius:18px;box-shadow:0 12px 36px rgba(27,110,48,.16);cursor:zoom-in}
-.hero-collage .big{grid-column:1/-1}
+.ways{margin-top:56px;display:grid;grid-template-columns:repeat(4,1fr);border:1px solid rgba(255,255,255,.22);border-radius:18px;background:rgba(255,255,255,.08);backdrop-filter:blur(10px);overflow:hidden}
+.ways a,.ways div{display:flex;gap:12px;align-items:center;padding:16px 18px;text-decoration:none;border-right:1px solid rgba(255,255,255,.16);font-size:.9rem;line-height:1.3}
+.ways>*:last-child{border-right:0}
+.ways a:hover{background:rgba(255,255,255,.08)}
+.ways .ico{font-size:1.35rem}
+.ways b{display:block;font-weight:600}
+.ways small{color:#cfe9d4;font-size:.82rem}
+@media(max-width:820px){.ways{grid-template-columns:1fr 1fr}.ways>*:nth-child(2){border-right:0}.ways>*:nth-child(-n+2){border-bottom:1px solid rgba(255,255,255,.16)}}
+@media(max-width:480px){.ways a,.ways div{padding:12px;flex-direction:column;align-items:flex-start;gap:4px}}
 
-/* process band */
-.process{background:var(--green-dark);color:#fff}
+/* results */
+.results{background:var(--ink);color:#fff}
+.results .eyebrow{color:#a8e6b4}
+.results .head p{color:#b9cbbf}
+.res-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:24px;align-items:stretch}
+.res-left{display:flex;flex-direction:column;gap:24px}
+.res-cta{flex:1;border-radius:22px;padding:30px;background:linear-gradient(135deg,var(--green),var(--green-dark));display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:16px}
+.res-cta h3{font-size:clamp(1.6rem,2.6vw,2.2rem)}
+.res-cta p{color:#dff3e3;max-width:420px}
+.viewer{background:#0d1a11;border-radius:22px;overflow:hidden;display:flex;flex-direction:column}
+.frames{position:relative;aspect-ratio:1080/348;cursor:zoom-in}
+.frames img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .6s}
+.frames img.on{opacity:1}
+.tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;padding:14px}
+.tabs button{font:600 .95rem Inter,sans-serif;color:#cfe9d4;background:rgba(255,255,255,.06);border:0;border-radius:12px;padding:12px;cursor:pointer;position:relative;overflow:hidden}
+.tabs button[aria-selected=true]{background:var(--green);color:#fff}
+.tabs button .bar{position:absolute;left:0;bottom:0;height:3px;width:0;background:#a8e6b4}
+.tabs button[aria-selected=true] .bar.run{animation:bar 3.2s linear forwards}
+@keyframes bar{to{width:100%}}
+.viewer .cap,.res-card .cap{padding:4px 20px 20px;color:#b9cbbf;font-size:.92rem}
+.viewer .cap b,.res-card .cap b{color:#fff;font-family:"DM Serif Display",serif;font-weight:400;font-size:1.35rem;display:block}
+.res-card{background:#0d1a11;border-radius:22px;overflow:hidden;display:flex;flex-direction:column}
+.res-card .img{flex:1;display:flex;align-items:center;background:#dce7e7;cursor:zoom-in}
+.res-card img{width:100%}
+.res-card .cap{padding-top:18px}
+@media(max-width:820px){.res-grid{grid-template-columns:1fr}}
+
+/* treatments */
+.svc{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.panel{border-radius:24px;padding:30px;background:var(--mint)}
+.panel.spec{background:var(--green-dark);color:#fff}
+.panel h3{font-size:1.6rem;margin-bottom:4px;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.panel>p{color:var(--muted);font-size:.92rem;margin-bottom:20px}
+.panel.spec>p{color:#cfe9d4}
+.pill{font:600 .7rem Inter,sans-serif;background:var(--orange);color:#3a2600;border-radius:999px;padding:4px 12px;letter-spacing:.06em;text-transform:uppercase}
+.tiles{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px;list-style:none}
+.tiles li{background:#fff;border-radius:16px;padding:16px 14px;display:flex;flex-direction:column;gap:6px;transition:transform .2s,box-shadow .2s}
+.tiles li:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(27,110,48,.14)}
+.spec .tiles li{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.16)}
+.tiles .ico{font-size:1.6rem;line-height:1}
+.tiles b{font-weight:600;font-size:.95rem;line-height:1.25}
+.tiles small{font-size:.8rem;color:var(--muted);line-height:1.3}
+.spec .tiles small{color:#cfe9d4}
+@media(max-width:820px){.svc{grid-template-columns:1fr}.panel{padding:22px}}
+
+/* process on photo */
+.process{position:relative;color:#fff;overflow:hidden}
+.process>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.process::before{content:"";position:absolute;inset:0;background:rgba(12,48,22,.86);z-index:1}
+.process .wrap{position:relative;z-index:2}
 .process .eyebrow{color:#a8e6b4}
-.process .lead{color:#cfe9d4}
-.steps{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));counter-reset:s}
-.step{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);border-radius:16px;padding:22px;counter-increment:s}
-.step::before{content:counter(s);display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--orange);color:#3a2600;font-weight:700;margin-bottom:12px}
-.step h3{font-size:1.15rem;margin-bottom:4px}
-.step p{font-size:.9rem;color:#d8eddc}
-.badges{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
-.badges span{background:#fff;color:var(--green-dark);font-weight:600;font-size:.85rem;padding:8px 16px;border-radius:999px}
+.process .head p{color:#cfe9d4}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;list-style:none;counter-reset:s;position:relative}
+.steps li{counter-increment:s;padding:0 20px 0 0;position:relative}
+.steps li::before{content:counter(s);display:grid;place-items:center;width:52px;height:52px;border-radius:50%;background:var(--orange);color:#3a2600;font:700 1.2rem Inter,sans-serif;margin-bottom:18px;position:relative;z-index:1}
+.steps li:not(:last-child)::after{content:"";position:absolute;top:26px;left:52px;right:0;height:2px;background:rgba(255,255,255,.25)}
+.steps h3{font-size:1.45rem;margin-bottom:4px}
+.steps p{color:#cfe9d4;font-size:.92rem}
+@media(max-width:820px){.steps{grid-template-columns:1fr 1fr;gap:32px 0}.steps li:nth-child(2)::after{display:none}}
+@media(max-width:480px){.steps{grid-template-columns:1fr}.steps li::after{display:none}}
 
-/* tour */
-.tour{display:grid;gap:14px;grid-template-columns:repeat(3,1fr)}
-.tour figure{position:relative;border-radius:18px;overflow:hidden;cursor:zoom-in;min-height:260px}
-.tour figure:first-child{grid-column:1/-1;min-height:420px}
-.tour img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;transition:transform .4s}
-.tour figure:hover img{transform:scale(1.04)}
-.tour figcaption{position:absolute;left:0;right:0;bottom:0;padding:36px 18px 14px;color:#fff;font-weight:600;background:linear-gradient(transparent,rgba(0,0,0,.65))}
-@media(max-width:700px){.tour{grid-template-columns:1fr}.tour figure:first-child{min-height:280px}}
+/* tour strip */
+.tour{padding:0}
+.strip{display:grid;grid-template-columns:1.25fr 1fr 1fr;height:min(62vh,520px)}
+.strip figure{position:relative;overflow:hidden;cursor:zoom-in}
+.strip img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.strip figure:hover img{transform:scale(1.05)}
+.strip figcaption{position:absolute;left:0;right:0;bottom:0;padding:60px 22px 20px;color:#fff;background:linear-gradient(transparent,rgba(0,0,0,.7))}
+.strip figcaption b{font-family:"DM Serif Display",serif;font-weight:400;font-size:1.5rem;display:block;line-height:1.1}
+.strip figcaption small{font-size:.85rem;color:#e3e3e3}
+.tour-title{position:absolute;top:22px;left:22px;z-index:1;background:#fff;color:var(--green-dark);font:700 .75rem Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase;padding:8px 14px;border-radius:999px}
+@media(max-width:820px){.strip{grid-template-columns:1fr 1fr;height:auto}.strip figure{height:240px}.strip figure:first-child{grid-column:1/-1;height:320px}}
 
-/* lightbox */
-.lb{position:fixed;inset:0;background:rgba(10,20,14,.92);display:none;align-items:center;justify-content:center;z-index:50;padding:20px;cursor:zoom-out}
-.lb.on{display:flex}
-.lb img{max-width:100%;max-height:100%;border-radius:12px}
-@media(max-width:820px){.hero-grid{grid-template-columns:1fr}.hero h1{font-size:2.4rem}}
+/* team */
+.team-card{display:grid;grid-template-columns:1fr 1.15fr;border-radius:24px;overflow:hidden;background:var(--mint)}
+.team-card .pic{position:relative;min-height:380px}
+.team-card .pic img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.team-card .body{padding:48px 44px;display:flex;flex-direction:column;justify-content:center}
+.team-card h3{font-size:2.3rem}
+.role{color:var(--green-dark);font-weight:600;margin:4px 0 16px}
+.team-card .body>p{color:var(--muted)}
+.crew{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
+.crew span{background:#fff;border-radius:999px;padding:10px 16px;font-size:.88rem;font-weight:600;color:var(--green-dark)}
+@media(max-width:820px){.team-card{grid-template-columns:1fr}.team-card .pic{min-height:240px}.team-card .body{padding:28px 22px}}
 
-.ways{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));margin-top:-36px;position:relative;z-index:2}
-.way{background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px;box-shadow:0 8px 24px rgba(0,0,0,.05)}
-.way .ico{font-size:1.5rem}
-.way h3{font-size:1.05rem;margin:4px 0}
-.way p{font-size:.88rem;color:var(--muted)}
-
-.grid{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
-.card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:24px}
-.card .ico{font-size:1.7rem;margin-bottom:8px}
-.card h3{font-size:1.15rem;margin-bottom:4px}
-.card p{color:var(--muted);font-size:.93rem}
-.sub{font-family:"DM Serif Display",serif;font-size:1.5rem;margin:40px 0 16px;display:flex;align-items:center;gap:12px}
-.pill{font:600 .72rem Inter,sans-serif;background:var(--green);color:#fff;border-radius:999px;padding:4px 12px;letter-spacing:.06em;text-transform:uppercase}
-
-.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
-.about-img{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.about-img img{border-radius:16px;width:100%;height:100%;object-fit:cover;aspect-ratio:1}
-.values{list-style:none;display:grid;gap:12px;margin-top:20px}
-.values li{background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px 16px;font-size:.95rem}
-.values strong{color:var(--green-dark)}
-@media(max-width:820px){.about-grid{grid-template-columns:1fr}}
-
-.gallery{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
-.gallery figure{border-radius:16px;overflow:hidden;border:1px solid var(--line);background:#fff}
-.gallery img{width:100%;aspect-ratio:4/3;object-fit:cover}
-.gallery figcaption{padding:10px 14px;font-size:.88rem;color:var(--muted)}
-.results{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
-.results img{aspect-ratio:auto;max-height:520px;object-fit:contain;background:#f5f8f5}
-
-.people{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
-.person{background:#fff;border:1px solid var(--line);border-radius:20px;padding:28px 22px;text-align:center}
-.person.lead-person{grid-column:1/-1;display:grid;grid-template-columns:200px 1fr;gap:32px;text-align:left;align-items:center;padding:32px}
-.avatar{aspect-ratio:1;border-radius:50%;background:linear-gradient(135deg,var(--green),#7ed08c);color:#fff;display:grid;place-items:center;font-family:"DM Serif Display",serif;font-size:2.4rem;overflow:hidden;width:130px;margin:0 auto 14px}
-.avatar img{width:100%;height:100%;object-fit:cover;object-position:50% 20%}
-.lead-person .avatar{width:100%;margin:0;font-size:3.2rem}
-.person h3{font-size:1.35rem}
-.role{color:var(--green-dark);font-weight:600;font-size:.92rem;margin-bottom:8px}
-.person p{color:var(--muted);font-size:.93rem}
-@media(max-width:700px){.person.lead-person{grid-template-columns:1fr;text-align:center}.lead-person .avatar{width:150px;margin:0 auto}}
-
+/* booking */
+.book{background:var(--mint)}
 .book-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:40px;align-items:start}
-form{background:#fff;border:1px solid var(--line);border-radius:20px;padding:28px;display:grid;gap:14px}
+.book-photo{border-radius:20px;overflow:hidden;aspect-ratio:16/10;margin:26px 0 22px}
+.book-photo img{width:100%;height:100%;object-fit:cover}
+form{background:#fff;border-radius:24px;padding:30px;display:grid;gap:14px;box-shadow:0 20px 50px rgba(27,110,48,.12)}
 .row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 label{font-size:.85rem;font-weight:600;display:grid;gap:6px}
 input,select,textarea{font:inherit;padding:11px 12px;border:1.5px solid var(--line);border-radius:10px;background:#fff;color:var(--ink);width:100%}
@@ -167,20 +212,24 @@ input:focus,select:focus,textarea:focus{outline:2px solid var(--green);border-co
 .status.ok{display:block;background:var(--mint);color:var(--green-dark)}
 .status.err{display:block;background:#fdecee;color:var(--red)}
 .hp{position:absolute;left:-9999px}
-.contact-list{list-style:none;display:grid;gap:14px;margin-top:22px}
+.contact-list{list-style:none;display:grid;gap:12px}
 .contact-list li{display:flex;gap:12px}
 .contact-list a{color:var(--green-dark);font-weight:600}
 @media(max-width:820px){.book-grid{grid-template-columns:1fr}.row,.send{grid-template-columns:1fr}}
 
-.map{border-radius:20px;overflow:hidden;border:1px solid var(--line);height:420px}
+/* map */
+.map{border-radius:24px;overflow:hidden;border:1px solid var(--line);height:420px}
 .map iframe{width:100%;height:100%;border:0}
 .map-actions{margin-top:16px;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
 
+/* lightbox, footer, misc */
+.lb{position:fixed;inset:0;background:rgba(10,20,14,.92);display:none;align-items:center;justify-content:center;z-index:50;padding:20px;cursor:zoom-out}
+.lb.on{display:flex}
+.lb img{max-width:100%;max-height:100%;border-radius:12px}
 footer{background:var(--ink);color:#cfdcd3;padding:32px 0;font-size:.9rem}
 footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
 .fab{position:fixed;right:18px;bottom:18px;background:var(--wa);color:#073b1c;width:58px;height:58px;border-radius:50%;display:grid;place-items:center;text-decoration:none;box-shadow:0 8px 24px rgba(0,0,0,.25);z-index:20}
 .fab svg{width:30px;height:30px}
-
 .consent{display:flex;gap:10px;align-items:flex-start;font-weight:400;font-size:.82rem;color:var(--muted)}
 .consent input{width:auto;margin-top:3px}
 .consent a,.linkbtn{color:var(--green-dark);font-weight:600}
@@ -196,6 +245,7 @@ dialog ul{padding-left:20px}
 dialog .btn{margin-top:20px}
 .callbar{display:none}
 @media(max-width:700px){
+  section{padding:64px 0}
   .callbar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:15;background:#fff;border-top:1px solid var(--line);padding:10px 84px 10px 16px;gap:10px}
   .callbar .btn{flex:1;padding:12px 10px}
   body{padding-bottom:70px}
@@ -209,9 +259,9 @@ dialog .btn{margin-top:20px}
   <div class="wrap nav">
     <a href="#top" class="logo"><b>MV Nzama Dental</b><small>We honour your trust</small></a>
     <ul id="menu">
-      <li><a href="#services">Services</a></li>
-      <li><a href="#process">How It Works</a></li>
       <li><a href="#results">Our Work</a></li>
+      <li><a href="#services">Treatments</a></li>
+      <li><a href="#process">How It Works</a></li>
       <li><a href="#tour">Tour</a></li>
       <li><a href="#team">Our Team</a></li>
       <li><a href="#location">Find Us</a></li>
@@ -223,135 +273,139 @@ dialog .btn{margin-top:20px}
 
 <main id="top">
 <section class="hero">
-  <div class="wrap hero-grid">
-    <div>
-      <p class="eyebrow">Family-centred dental practice · Montclair, Durban</p>
-      <h1>Caring for your whole family's smile.</h1>
-      <p>MV Nzama Dental is here for all your dental needs, from a simple check-up to crowns, root canals and dentures. Book online, or just call, WhatsApp or pop in.</p>
-      <div class="hero-actions">
-        <a href="#book" class="btn btn-primary">Book an appointment</a>
-        <a class="btn btn-wa" data-wa href="#" target="_blank" rel="noopener">WhatsApp us</a>
-      </div>
+  <img class="hero-bg" src="images/surgery-1.jpg" alt="Treatment room at MV Nzama Dental" fetchpriority="high">
+  <div class="wrap">
+    <p class="eyebrow">Family dental practice · Montclair, Durban</p>
+    <h1>Healthy smiles for the <em>whole family.</em></h1>
+    <p class="sub">From check-ups to crowns, all under one roof in Montclair.</p>
+    <div class="hero-actions">
+      <a href="#book" class="btn btn-light">Book an appointment</a>
+      <a class="btn btn-wa" data-wa href="#" target="_blank" rel="noopener">WhatsApp us</a>
     </div>
-    <div class="hero-collage">
-      <img class="big" src="images/waiting-room.jpg" alt="Bright, welcoming waiting room at MV Nzama Dental" fetchpriority="high">
-      <img class="small" src="images/surgery-1.jpg" alt="Modern treatment room with dental chair">
-      <img class="small" src="images/result-2.jpg" alt="Smile restoration result" style="object-position:50% 85%">
+    <div class="ways">
+      <a href="#book"><span class="ico">💻</span><span><b>Book online</b><small>We confirm your slot</small></span></a>
+      <a data-tel href="#"><span class="ico">📞</span><span><b>Call us</b><small data-bind="phone"></small></span></a>
+      <a data-wa href="#" target="_blank" rel="noopener"><span class="ico">💬</span><span><b>WhatsApp</b><small data-bind="whatsappDisplay"></small></span></a>
+      <a href="#location"><span class="ico">🏥</span><span><b>Walk in</b><small data-bind="addressShort"></small></span></a>
     </div>
   </div>
 </section>
 
-<div class="wrap">
-  <div class="ways">
-    <div class="way"><div class="ico">💻</div><h3>Book online</h3><p>Send a request below, we'll confirm your slot.</p></div>
-    <div class="way"><div class="ico">📞</div><h3>Call us</h3><p><a data-tel href="#" data-bind="phone"></a></p></div>
-    <div class="way"><div class="ico">💬</div><h3>WhatsApp or email</h3><p>Message us with any questions.</p></div>
-    <div class="way"><div class="ico">🏥</div><h3>Walk in</h3><p data-bind="addressShort"></p></div>
+<section id="results" class="results">
+  <div class="wrap">
+    <div class="head rv">
+      <div><p class="eyebrow">Our work</p><h2>Real smiles, made here.</h2></div>
+      <p>Treatments done at the practice, start to finish. Tap a photo to see it full size.</p>
+    </div>
+    <div class="res-grid">
+      <div class="res-left">
+      <div class="viewer rv">
+        <div class="frames" id="frames">
+          <img class="on" src="images/smile-before.jpg" alt="Before: damaged and missing front teeth">
+          <img src="images/smile-during.jpg" alt="During: teeth prepared for restoration" loading="lazy">
+          <img src="images/smile-after.jpg" alt="After: restored front teeth" loading="lazy">
+        </div>
+        <div class="tabs" role="tablist" aria-label="Treatment stage">
+          <button role="tab" aria-selected="true">Before<span class="bar"></span></button>
+          <button role="tab" aria-selected="false">During<span class="bar"></span></button>
+          <button role="tab" aria-selected="false">After<span class="bar"></span></button>
+        </div>
+        <p class="cap"><b>Front teeth restoration</b>Damaged front teeth rebuilt and restored.</p>
+      </div>
+      <div class="res-cta rv">
+        <h3>Your smile could be next.</h3>
+        <p>It starts with a consultation. Book online, or call or WhatsApp us.</p>
+        <a href="#book" class="btn btn-light">Book a consultation</a>
+      </div>
+      </div>
+      <div class="res-card rv">
+        <div class="img"><img src="images/result-1.jpg" alt="Before and after scaling and polishing" loading="lazy" data-zoom></div>
+        <p class="cap"><b>Scaling &amp; polishing</b>Heavy staining and build-up removed.</p>
+      </div>
+    </div>
   </div>
-</div>
+</section>
 
 <section id="services">
   <div class="wrap">
-    <p class="eyebrow">What we do</p>
-    <h2>Our treatments</h2>
-    <p class="lead">Complete dental care for the whole family, all in one practice.</p>
-    <div class="grid">
-      <div class="card"><div class="ico">🩺</div><h3>Consultation</h3><p>A thorough check of your teeth and gums, with clear advice and a treatment plan.</p></div>
-      <div class="card"><div class="ico">🩻</div><h3>Dental radiographs</h3><p>X-rays that help us find problems early and plan treatment accurately.</p></div>
-      <div class="card"><div class="ico">🪥</div><h3>Scaling &amp; polishing</h3><p>Professional cleaning to remove plaque and stains and keep gums healthy.</p></div>
-      <div class="card"><div class="ico">🦷</div><h3>Extractions</h3><p>Gentle removal of teeth that can't be saved.</p></div>
-      <div class="card"><div class="ico">🛠️</div><h3>Restorations / fillings</h3><p>Repair decayed or damaged teeth so they look and work like new.</p></div>
-      <div class="card"><div class="ico">🔄</div><h3>Removal of onlays</h3><p>Safe removal of old gold or silver onlays and replacement.</p></div>
+    <div class="head rv">
+      <div><p class="eyebrow">What we do</p><h2>Every treatment, one practice.</h2></div>
+      <p>No referrals, no running around. Your whole family can be cared for here.</p>
     </div>
-
-    <h3 class="sub">Our in-house surgeon <span class="pill">Specialist care</span></h3>
-    <div class="grid">
-      <div class="card"><div class="ico">🔬</div><h3>Surgical extractions</h3><p>Complex extractions, such as impacted or broken teeth, handled in-house.</p></div>
-      <div class="card"><div class="ico">👑</div><h3>Prosthetics</h3><p>Crowns, bridges, dentures and veneers to restore your smile.</p></div>
-      <div class="card"><div class="ico">💉</div><h3>Root canal treatment</h3><p>Relieve pain and save your natural tooth.</p></div>
-      <div class="card"><div class="ico">✨</div><h3>Teeth whitening</h3><p>Brighten your smile safely under professional care.</p></div>
+    <div class="svc">
+      <div class="panel rv">
+        <h3>General care</h3>
+        <p>Keeping teeth healthy, every visit.</p>
+        <ul class="tiles">
+          <li><span class="ico">🩺</span><b>Consultation</b><small>Check-up &amp; treatment plan</small></li>
+          <li><span class="ico">🩻</span><b>Dental X-rays</b><small>Done on site</small></li>
+          <li><span class="ico">🪥</span><b>Scaling &amp; polishing</b><small>Professional clean</small></li>
+          <li><span class="ico">🦷</span><b>Extractions</b><small>Gentle removal</small></li>
+          <li><span class="ico">🛠️</span><b>Fillings</b><small>Repair decay &amp; damage</small></li>
+          <li><span class="ico">🔄</span><b>Onlay removal</b><small>Old gold or silver</small></li>
+        </ul>
+      </div>
+      <div class="panel spec rv">
+        <h3>In-house surgeon <span class="pill">Specialist care</span></h3>
+        <p>Advanced treatment without being sent elsewhere.</p>
+        <ul class="tiles">
+          <li><span class="ico">🔬</span><b>Surgical extractions</b><small>Impacted or broken teeth</small></li>
+          <li><span class="ico">💉</span><b>Root canals</b><small>Save your natural tooth</small></li>
+          <li><span class="ico">👑</span><b>Crowns &amp; bridges</b><small>Rebuild your smile</small></li>
+          <li><span class="ico">😁</span><b>Dentures &amp; veneers</b><small>Look and feel natural</small></li>
+          <li><span class="ico">✨</span><b>Teeth whitening</b><small>Safe, professional</small></li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>
 
 <section id="process" class="process">
+  <img src="images/waiting-room.jpg" alt="" loading="lazy">
   <div class="wrap">
-    <p class="eyebrow">Everything under one roof</p>
-    <h2>From first check-up to finished smile</h2>
-    <p class="lead">You don't need to be sent elsewhere. Diagnosis, treatment and specialist surgery all happen right here in Montclair.</p>
-    <div class="steps">
-      <div class="step"><h3>Book</h3><p>Online, by phone, on WhatsApp or by walking in.</p></div>
-      <div class="step"><h3>Consultation &amp; X-ray</h3><p>A full examination and dental radiographs on site.</p></div>
-      <div class="step"><h3>Treatment</h3><p>Cleaning, fillings, extractions and removal of old onlays.</p></div>
-      <div class="step"><h3>Specialist care</h3><p>Our in-house surgeon handles surgery, root canals, crowns, bridges, dentures, veneers and whitening.</p></div>
+    <div class="head rv">
+      <div><p class="eyebrow">Everything under one roof</p><h2>First visit to finished smile.</h2></div>
+      <p>Diagnosis, treatment and specialist surgery all happen right here in Montclair.</p>
     </div>
-    <div class="badges">
-      <span>👨‍👩‍👧 Family centred</span><span>🏥 In-house surgeon</span><span>🩻 On-site X-rays</span><span>👑 Crowns &amp; veneers</span><span>🦷 Dentures</span><span>✨ Whitening</span>
-    </div>
+    <ol class="steps rv">
+      <li><h3>Book</h3><p>Online, call, WhatsApp or walk in.</p></li>
+      <li><h3>Check-up &amp; X-ray</h3><p>A full exam, on site.</p></li>
+      <li><h3>Treatment</h3><p>Cleaning, fillings and extractions.</p></li>
+      <li><h3>Specialist care</h3><p>Surgery, crowns, dentures and more.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section id="tour" class="tour">
+  <div class="strip">
+    <figure><span class="tour-title">Take a look inside</span><img src="images/waiting-room.jpg" alt="Bright waiting area with fresh juice for patients" loading="lazy"><figcaption><b>Waiting area</b><small>Bright, calm and comfortable</small></figcaption></figure>
+    <figure><img src="images/reception.jpg" alt="Reception desk" loading="lazy"><figcaption><b>Reception</b><small>A warm welcome</small></figcaption></figure>
+    <figure><img src="images/surgery-1.jpg" alt="Modern dental chair and equipment" loading="lazy" style="object-position:50% 70%"><figcaption><b>Treatment room</b><small>Modern equipment</small></figcaption></figure>
   </div>
 </section>
 
 <section id="team">
   <div class="wrap">
-    <p class="eyebrow">Meet the team</p>
-    <h2>The people behind your smile</h2>
-    <p class="lead">A friendly team that will make you feel at home.</p>
-    <div class="people">
-      <div class="person lead-person">
-        <div class="avatar">M</div>
-        <div>
-          <h3>Ms Mngonyama</h3>
-          <p class="role">Clinical Practitioner · 5+ years' experience</p>
-          <p>Ms Mngonyama brings over five years of clinical experience to MV Nzama Dental. She offers valuable expertise in primary dental care, with a strong emphasis on patient-centred care, promoting oral health and ensuring that every patient receives compassionate, quality dental services.</p>
-        </div>
-      </div>
-      <div class="person">
-        <div class="avatar">🧑‍⚕️</div>
-        <h3>Dental Assistant</h3>
-        <p class="role">Chairside &amp; patient care</p>
-        <p>Here to make sure every visit runs smoothly and comfortably.</p>
-      </div>
-      <div class="person">
-        <div class="avatar">🦷</div>
-        <h3>In-house Surgeon</h3>
-        <p class="role">Surgery &amp; prosthetics</p>
-        <p>Surgical extractions, crowns, bridges, dentures, veneers, root canals and whitening.</p>
+    <div class="team-card rv">
+      <div class="pic"><img src="images/reception.jpg" alt="Reception at MV Nzama Dental" loading="lazy" style="object-position:30% 50%"></div>
+      <div class="body">
+        <p class="eyebrow">Meet the team</p>
+        <h3>Ms Mngonyama</h3>
+        <p class="role">Clinical Practitioner · 5+ years' experience</p>
+        <p>Over five years of clinical experience in primary dental care, with a strong focus on patient-centred care and making sure every patient receives compassionate, quality treatment.</p>
+        <div class="crew"><span>🦷 In-house surgeon</span><span>🧑‍⚕️ Dental assistant</span></div>
       </div>
     </div>
   </div>
 </section>
 
-<section id="results" class="alt">
-  <div class="wrap">
-    <p class="eyebrow">Our work</p>
-    <h2>Smile transformations</h2>
-    <p class="lead">Real treatments carried out at the practice. Tap a photo to enlarge it.</p>
-    <div class="gallery results">
-      <figure><img src="images/result-2.jpg" alt="Before, during and after restoration of front teeth" loading="lazy" data-zoom><figcaption>Front teeth restoration: before, during and after</figcaption></figure>
-      <figure><img src="images/result-1.jpg" alt="Before and after scaling and polishing" loading="lazy" data-zoom><figcaption>Scaling &amp; polishing: before and after</figcaption></figure>
-    </div>
-  </div>
-</section>
-
-<section id="tour">
-  <div class="wrap">
-    <p class="eyebrow">Take a look inside</p>
-    <h2>A modern, welcoming practice</h2>
-    <p class="lead">Clean, comfortable rooms with up-to-date equipment, so your visit is calm from the moment you walk in.</p>
-    <div class="tour">
-      <figure><img src="images/surgery-1.jpg" alt="Modern dental chair and equipment" loading="lazy" data-zoom style="object-position:50% 60%"><figcaption>Our treatment rooms</figcaption></figure>
-      <figure><img src="images/reception.jpg" alt="Reception desk" loading="lazy" data-zoom><figcaption>Reception</figcaption></figure>
-      <figure><img src="images/waiting-room.jpg" alt="Waiting area" loading="lazy" data-zoom><figcaption>Waiting area</figcaption></figure>
-    </div>
-  </div>
-</section>
-
-<section id="book">
+<section id="book" class="book">
   <div class="wrap book-grid">
-    <div>
+    <div class="rv">
       <p class="eyebrow">Book online</p>
       <h2>Request an appointment</h2>
-      <p class="lead" style="margin-bottom:0">Fill in the form and we'll get back to you to confirm your time. Prefer to talk? You can also call, WhatsApp, email or visit us in person.</p>
+      <p style="color:var(--muted)">Send a request and we'll get back to you to confirm a time. Prefer to talk? Call, WhatsApp or pop in.</p>
+      <div class="book-photo"><img src="images/waiting-room.jpg" alt="Waiting area" loading="lazy" style="object-position:50% 40%"></div>
       <ul class="contact-list">
         <li>📞 <span><a data-tel href="#" data-bind="phone"></a></span></li>
         <li>💬 <span><a data-wa href="#" target="_blank" rel="noopener" data-bind="whatsappDisplay"></a> (WhatsApp)</span></li>
@@ -360,7 +414,7 @@ dialog .btn{margin-top:20px}
       </ul>
     </div>
 
-    <form id="bookForm" novalidate>
+    <form id="bookForm" class="rv" novalidate>
       <input class="hp" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true">
       <div class="row">
         <label>Full name<input name="name" required autocomplete="name"></label>
@@ -399,12 +453,13 @@ dialog .btn{margin-top:20px}
   </div>
 </section>
 
-<section id="location" class="alt">
+<section id="location">
   <div class="wrap">
-    <p class="eyebrow">Visit us</p>
-    <h2>Find the practice</h2>
-    <p class="lead" data-bind="address"></p>
-    <div class="map">
+    <div class="head rv">
+      <div><p class="eyebrow">Visit us</p><h2>Find the practice</h2></div>
+      <p data-bind="address"></p>
+    </div>
+    <div class="map rv">
       <iframe id="mapFrame" title="Map showing MV Nzama Dental" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
     </div>
     <div class="map-actions">
@@ -498,12 +553,34 @@ $("#closePrivacy").onclick = () => dlg.close();
 dlg.addEventListener("click", e => { if(e.target === dlg) dlg.close(); });
 
 const lb = $("#lb");
-document.querySelectorAll("[data-zoom], .hero-collage img, .tour figure").forEach(el => el.addEventListener("click", () => {
-  const img = el.tagName === "IMG" ? el : el.querySelector("img");
-  lb.firstElementChild.src = img.src; lb.firstElementChild.alt = img.alt; lb.classList.add("on");
-}));
+const zoom = img => { lb.firstElementChild.src = img.src; lb.firstElementChild.alt = img.alt; lb.classList.add("on"); };
+document.querySelectorAll("[data-zoom], .strip figure").forEach(el => el.addEventListener("click", () =>
+  zoom(el.tagName === "IMG" ? el : el.querySelector("img"))));
+$("#frames").addEventListener("click", () => zoom({src:"images/result-2.jpg", alt:"Before, during and after restoration of front teeth"}));
 lb.onclick = () => lb.classList.remove("on");
 document.addEventListener("keydown", e => { if(e.key === "Escape") lb.classList.remove("on"); });
+
+/* before / during / after viewer: plays while on screen, stops once a visitor picks a stage */
+const frames = [...document.querySelectorAll("#frames img")], tabs = [...document.querySelectorAll(".tabs button")];
+let stage = 0, timer = null, manual = false;
+const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+function go(i){
+  stage = i;
+  frames.forEach((f, n) => f.classList.toggle("on", n === i));
+  tabs.forEach((t, n) => {
+    t.setAttribute("aria-selected", n === i);
+    const bar = t.firstElementChild; bar.classList.remove("run");
+    if(n === i && timer){ void bar.offsetWidth; bar.classList.add("run"); }
+  });
+}
+const play = () => { if(manual || reduce || timer) return; timer = setInterval(() => go((stage + 1) % 3), 3200); go(stage); };
+const stop = () => { clearInterval(timer); timer = null; go(stage); };
+tabs.forEach((t, n) => t.addEventListener("click", () => { manual = true; stop(); go(n); }));
+new IntersectionObserver(([e]) => e.isIntersecting ? play() : stop(), {threshold:.4}).observe($("#frames"));
+
+/* reveal sections as they scroll into view */
+const io = new IntersectionObserver(es => es.forEach(e => { if(e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target); } }), {threshold:.12});
+document.querySelectorAll(".rv").forEach(el => io.observe(el));
 
 const form = $("#bookForm"), status = $("#status");
 const v = n => form.elements[n].value.trim();
