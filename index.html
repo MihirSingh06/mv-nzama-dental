@@ -18,7 +18,7 @@
   "@type": "Dentist",
   "name": "MV Nzama Dental (Montclair)",
   "slogan": "We honour your trust",
-  "description": "Family-orientated dental practice offering consultations, dental X-rays, scaling and polishing, extractions, fillings, root canal treatment, crowns, bridges, dentures, veneers and teeth whitening.",
+  "description": "Family-orientated and child-friendly dental practice offering consultations, dental X-rays, scaling and polishing, extractions, fillings, root canal treatment, crowns, bridges, veneers, dentures, braces, crown recementation, gold and silver removal and teeth whitening.",
   "telephone": "+27314621723",
   "email": "melodious@medi.co.za",
   "address": {"@type": "PostalAddress", "streetAddress": "139 Montclair Road", "addressLocality": "Montclair, Durban", "postalCode": "4004", "addressCountry": "ZA"},
@@ -223,6 +223,8 @@ input:focus,select:focus,textarea:focus{outline:2px solid var(--forest);border-c
   <symbol id="i-onlay" viewBox="0 0 24 24"><use href="#tooth" transform="translate(3.6 8.4) scale(.7)" stroke-width="2.4"/><path d="M6 6.2c3.2-3 8.8-3 12 0"/><path d="M8 2.2l-1 1.6M16 2.2l1 1.6M12 .9v1.8"/></symbol>
   <symbol id="i-surgery" viewBox="0 0 24 24"><use href="#tooth"/><path d="M12.6 4.6l-2 3.6 2.6 2-1.6 3.6"/></symbol>
   <symbol id="i-root" viewBox="0 0 24 24"><use href="#tooth"/><path d="M9.4 9.5v5.5M14.6 9.5v5.5"/></symbol>
+  <symbol id="i-recement" viewBox="0 0 24 24"><use href="#tooth" transform="translate(3.6 8.4) scale(.7)" stroke-width="2.4"/><path d="M7 5.5l2.2 1.6L12 3.5l2.8 3.6L17 5.5l-.8 3.6H7.8z"/></symbol>
+  <symbol id="i-braces" viewBox="0 0 24 24"><rect x="2.5" y="5" width="5.6" height="14" rx="2.8"/><rect x="9.2" y="5" width="5.6" height="14" rx="2.8"/><rect x="15.9" y="5" width="5.6" height="14" rx="2.8"/><path d="M1 12h22"/><path d="M4.3 10.6h2v2.8h-2zM11 10.6h2v2.8h-2zM17.7 10.6h2v2.8h-2z" fill="currentColor"/></symbol>
   <symbol id="i-crown" viewBox="0 0 24 24"><path d="M3 8.5l4.6 3.8L12 5l4.4 7.3L21 8.5 19 19H5z"/><path d="M6 15.5h12"/></symbol>
   <symbol id="i-smile" viewBox="0 0 24 24"><path d="M3 9h18c-1 6.5-4.6 9.5-9 9.5S4 15.5 3 9z"/><path d="M3.6 12h16.8M8 9v3M12 9v3M16 9v3"/></symbol>
   <symbol id="i-sparkle" viewBox="0 0 24 24"><path d="M11 3l1.9 5.6L18.5 10.5l-5.6 1.9L11 18l-1.9-5.6L3.5 10.5l5.6-1.9z"/><path d="M19 15v5M16.5 17.5h5"/></symbol>
@@ -289,7 +291,7 @@ input:focus,select:focus,textarea:focus{outline:2px solid var(--forest);border-c
     <div class="rv">
       <p class="eyebrow">Welcome to our practice</p>
       <h2>Good dental care begins with trust.</h2>
-      <p>MV Nzama Dental is a family-orientated practice. We care about the people who walk through our doors, not only their teeth. Every visit starts with listening, so you understand your options and feel at ease in the chair.</p>
+      <p>We are a family-orientated and child-friendly practice that is here to cater to all your dental needs. We care about the people who walk through our doors, not only their teeth. Every visit starts with listening, so you understand your options and feel at ease in the chair.</p>
       <div class="listen">
         <svg class="ic"><use href="#i-heart"/></svg>
         <div>
@@ -308,7 +310,7 @@ input:focus,select:focus,textarea:focus{outline:2px solid var(--forest);border-c
   <div class="wrap">
     <div class="head rv">
       <div><p class="eyebrow">How can we help you?</p><h2>Care for every smile.</h2></div>
-      <p>From little ones to grandparents, we look after the whole family.</p>
+      <p>All our services are done at the premises, for the whole family, from little ones to grandparents.</p>
     </div>
     <div class="svc">
       <div class="panel rv">
@@ -317,10 +319,11 @@ input:focus,select:focus,textarea:focus{outline:2px solid var(--forest);border-c
         <ul class="tiles">
           <li><svg class="ic"><use href="#i-consult"/></svg><b>Consultation</b><small>Check-up &amp; treatment plan</small></li>
           <li><svg class="ic"><use href="#i-xray"/></svg><b>Dental X-rays</b><small>Done on site</small></li>
-          <li><svg class="ic"><use href="#i-clean"/></svg><b>Scaling &amp; polishing</b><small>Professional clean</small></li>
+          <li><svg class="ic"><use href="#i-clean"/></svg><b>Scaling &amp; polishing</b><small>A professional clean</small></li>
           <li><svg class="ic"><use href="#i-extract"/></svg><b>Tooth extraction</b><small>Gentle removal</small></li>
-          <li><svg class="ic"><use href="#i-filling"/></svg><b>Fillings</b><small>Repair decay &amp; damage</small></li>
-          <li><svg class="ic"><use href="#i-onlay"/></svg><b>Onlay removal</b><small>Old gold or silver</small></li>
+          <li><svg class="ic"><use href="#i-filling"/></svg><b>Fillings</b><small>Restore decayed or damaged teeth</small></li>
+          <li><svg class="ic"><use href="#i-onlay"/></svg><b>Gold &amp; silver removal</b><small>Old gold or silver work taken off</small></li>
+          <li><svg class="ic"><use href="#i-recement"/></svg><b>Crown recementation</b><small>Loose crown fixed back in place</small></li>
         </ul>
       </div>
       <div class="panel spec rv">
@@ -330,9 +333,10 @@ input:focus,select:focus,textarea:focus{outline:2px solid var(--forest);border-c
         <ul class="tiles">
           <li><svg class="ic"><use href="#i-surgery"/></svg><b>Surgical extractions</b><small>Impacted or broken teeth</small></li>
           <li><svg class="ic"><use href="#i-root"/></svg><b>Root canals</b><small>Save your natural tooth</small></li>
-          <li><svg class="ic"><use href="#i-crown"/></svg><b>Crowns &amp; bridges</b><small>Rebuild your smile</small></li>
-          <li><svg class="ic"><use href="#i-smile"/></svg><b>Dentures &amp; veneers</b><small>Look and feel natural</small></li>
-          <li><svg class="ic"><use href="#i-sparkle"/></svg><b>Teeth whitening</b><small>Safe, professional</small></li>
+          <li><svg class="ic"><use href="#i-crown"/></svg><b>Crowns, bridges &amp; veneers</b><small>Rebuild your smile</small></li>
+          <li><svg class="ic"><use href="#i-smile"/></svg><b>Dentures</b><small>False teeth that look and feel natural</small></li>
+          <li><svg class="ic"><use href="#i-braces"/></svg><b>Braces</b><small>Straighten your smile</small></li>
+          <li><svg class="ic"><use href="#i-sparkle"/></svg><b>Teeth whitening</b><small>Safe, professional bleaching</small></li>
         </ul>
       </div>
     </div>
@@ -451,7 +455,11 @@ input:focus,select:focus,textarea:focus{outline:2px solid var(--forest);border-c
           <option>Tooth extraction</option>
           <option>Filling</option>
           <option>Root canal treatment</option>
-          <option>Crown / bridge / dentures / veneers</option>
+          <option>Crown / bridge / veneers</option>
+          <option>Dentures (false teeth)</option>
+          <option>Braces</option>
+          <option>Crown recementation</option>
+          <option>Gold / silver removal</option>
           <option>Teeth whitening</option>
           <option>Other</option>
         </select>
