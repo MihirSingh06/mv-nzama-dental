@@ -21,6 +21,7 @@
   "description": "Family-orientated and child-friendly dental practice offering consultations, dental X-rays, scaling and polishing, extractions, fillings, root canal treatment, crowns, bridges, veneers, dentures, braces, crown recementation, gold and silver removal and teeth whitening.",
   "telephone": "+27314621723",
   "email": "melodious@medi.co.za",
+  "sameAs": ["https://www.instagram.com/mvnzama/"],
   "address": {"@type": "PostalAddress", "streetAddress": "139 Montclair Road", "addressLocality": "Montclair, Durban", "postalCode": "4004", "addressCountry": "ZA"},
   "medicalSpecialty": "Dentistry"
 },{
@@ -225,6 +226,7 @@ input:focus,select:focus,textarea:focus{outline:2px solid var(--forest);border-c
   <symbol id="i-root" viewBox="0 0 24 24"><use href="#tooth"/><path d="M9.4 9.5v5.5M14.6 9.5v5.5"/></symbol>
   <symbol id="i-recement" viewBox="0 0 24 24"><use href="#tooth" transform="translate(3.6 8.4) scale(.7)" stroke-width="2.4"/><path d="M7 5.5l2.2 1.6L12 3.5l2.8 3.6L17 5.5l-.8 3.6H7.8z"/></symbol>
   <symbol id="i-braces" viewBox="0 0 24 24"><rect x="2.5" y="5" width="5.6" height="14" rx="2.8"/><rect x="9.2" y="5" width="5.6" height="14" rx="2.8"/><rect x="15.9" y="5" width="5.6" height="14" rx="2.8"/><path d="M1 12h22"/><path d="M4.3 10.6h2v2.8h-2zM11 10.6h2v2.8h-2zM17.7 10.6h2v2.8h-2z" fill="currentColor"/></symbol>
+  <symbol id="i-insta" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.3 6.7h.01"/></symbol>
   <symbol id="i-crown" viewBox="0 0 24 24"><path d="M3 8.5l4.6 3.8L12 5l4.4 7.3L21 8.5 19 19H5z"/><path d="M6 15.5h12"/></symbol>
   <symbol id="i-smile" viewBox="0 0 24 24"><path d="M3 9h18c-1 6.5-4.6 9.5-9 9.5S4 15.5 3 9z"/><path d="M3.6 12h16.8M8 9v3M12 9v3M16 9v3"/></symbol>
   <symbol id="i-sparkle" viewBox="0 0 24 24"><path d="M11 3l1.9 5.6L18.5 10.5l-5.6 1.9L11 18l-1.9-5.6L3.5 10.5l5.6-1.9z"/><path d="M19 15v5M16.5 17.5h5"/></symbol>
@@ -426,6 +428,7 @@ input:focus,select:focus,textarea:focus{outline:2px solid var(--forest);border-c
       <ul class="contact-list">
         <li><svg class="ic"><use href="#i-chat"/></svg><span><a data-wa href="#" target="_blank" rel="noopener" data-bind="whatsappDisplay"></a> (WhatsApp)</span></li>
         <li><svg class="ic"><use href="#i-mail"/></svg><a data-mail href="#" data-bind="email"></a></li>
+        <li><svg class="ic"><use href="#i-insta"/></svg><span><a data-ig href="#" target="_blank" rel="noopener" data-bind="instagramHandle"></a> (Instagram)</span></li>
       </ul>
     </div>
 
@@ -511,7 +514,7 @@ input:focus,select:focus,textarea:focus{outline:2px solid var(--forest);border-c
     <div><b>MV Nzama Dental</b><br><span class="hand">We honour your trust</span><br>© <span class="yr"></span></div>
     <div><b>Montclair</b><br><span data-bind="montclair.address"></span><br><span data-bind="montclair.phone"></span></div>
     <div><b>Umlazi</b><br><span data-bind="umlazi.address"></span><br><span data-bind="umlazi.phone"></span></div>
-    <div><button class="linkbtn" type="button" data-privacy>Privacy notice</button></div>
+    <div><a class="ig" data-ig href="#" target="_blank" rel="noopener"><svg class="ic"><use href="#i-insta"/></svg>Follow us on Instagram</a><br><button class="linkbtn" type="button" data-privacy>Privacy notice</button></div>
   </div>
 </footer>
 

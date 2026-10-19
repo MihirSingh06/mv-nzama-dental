@@ -3,6 +3,8 @@ const PRACTICE = {
   email: "melodious@medi.co.za",
   whatsapp: "27818115426",          // international format, digits only
   whatsappDisplay: "081 811 5426",
+  instagram: "https://www.instagram.com/mvnzama/",
+  instagramHandle: "@mvnzama",
   montclair: {
     name: "Montclair",
     phone: "031 462 1723",
@@ -34,6 +36,7 @@ const get = path => path.split(".").reduce((o, k) => o[k], PRACTICE);
 $$("[data-bind]").forEach(el => el.textContent = get(el.dataset.bind));
 $$("[data-tel]").forEach(el => el.href = "tel:" + PRACTICE[el.dataset.tel || "montclair"].phone.replace(/\s/g,""));
 $$("[data-mail]").forEach(el => el.href = "mailto:" + PRACTICE.email);
+$$("[data-ig]").forEach(el => el.href = PRACTICE.instagram);
 $$("[data-wa]").forEach(el =>
   el.href = `https://wa.me/${PRACTICE.whatsapp}?text=${enc("Hi, I'd like to know more / book an appointment at MV Nzama Dental.")}`);
 $$("[data-map]").forEach(el => el.src = `https://www.google.com/maps?q=${enc(PRACTICE[el.dataset.map].mapQuery)}&output=embed`);

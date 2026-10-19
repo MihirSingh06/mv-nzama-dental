@@ -65,6 +65,9 @@ footer{background:var(--forest-dark);color:#d5e2d9;padding:40px 0;font-size:.9re
 footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:20px}
 footer b{color:#fff;font-family:Outfit,sans-serif}
 footer .hand{color:var(--lime);font-size:1.15rem}
+footer .ig{display:inline-flex;align-items:center;gap:8px;color:#fff;font-weight:600;text-decoration:none;margin-bottom:6px}
+footer .ig .ic{width:20px;height:20px;color:var(--lime)}
+footer .ig:hover{text-decoration:underline}
 .fab{position:fixed;right:18px;bottom:18px;background:var(--wa);color:#073b1c;width:58px;height:58px;border-radius:50%;display:grid;place-items:center;text-decoration:none;box-shadow:0 8px 24px rgba(0,0,0,.25);z-index:20}
 .fab svg{width:30px;height:30px}
 .linkbtn{background:none;border:0;font:inherit;text-decoration:underline;cursor:pointer;color:#d5e2d9;font-weight:500}
