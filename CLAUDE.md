@@ -61,3 +61,14 @@ Screenshots at about 390px (phone) and 820px (tablet) looked fine at the top of 
 ## Design notes
 Green palette from the practice's flyer (`--green` #2a9d44, `--green-dark` #1b6e30) with red and orange accents. Fonts: DM Serif Display and Inter (Google Fonts). Responsive breakpoints at 820px and 700px.
 
+
+## Round 2 client feedback (2026-10-19), now in index.html
+Supersedes "Files", "Page sections" and "Design notes" above.
+- **Files:** `index.html` (the whole site, one page), `styles.css` (shared), `site.js` (the `PRACTICE` object with `montclair` and `umlazi` branches, bindings, menu, privacy dialog, lightbox, reveal). The privacy dialog is injected by site.js.
+- **Home order:** hero (waiting room photo, building inset, 4 contact cards), About ("Welcome to our practice / Good dental care begins with trust", "Care that listens"), Services ("How can we help you? / Care for every smile", General care plus "Special care, with our in-house surgeon" in handwriting, custom SVG icons), Your Visit (3 steps: warm welcome, clear assessment, plan made for you, plus "A healthy smile is part of a healthy, confident life"), Gallery (Before/During/After viewer, the client's favourite smile photo `smile-fav.jpg` under it, scaling result, then practice photos; client wanted it on the home page, not a separate page), Booking (with practice picker), Find your practice (two maps).
+- **Removed at client request:** red emergency bar, Tour strip, Team section, "no referrals" and "under one roof" copy, the 4th "specialist/referral" step. Before/after moved into the Gallery section.
+- **Palette** from the client's reference ad: cream `#f4efe3`, lime `#8cb811`, forest `#2d5a43` / `#1f4231`. Fonts: Outfit (headings), Inter (body), Caveat (handwriting).
+- **Umlazi** (from the business card photo): Umlazi AA Medical Centre, 235 Simelane Drive, tel 031 909 1848. Check that the Umlazi map pin lands on the right building.
+- The card shows email gawu@medi.co.za and Res 031 572 6722, while the site uses melodious@medi.co.za. Ask which email the practice wants.
+- The hero/about chips (gentle dental care, kiddies friendly, affordable cash rates, contracted to all medical aids) are copied from the practice's own street sign.
+- `new images/` holds the client's raw photos (not referenced by the site; don't deploy it, ~55MB incl. an MP4). The clinical close-ups were not used because nobody has said which shots are before/after pairs.
