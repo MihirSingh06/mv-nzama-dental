@@ -29,7 +29,7 @@ Hero collage, "ways to book" strip, Treatments (incl. in-house surgeon group), "
 - Vercel project: `dental-website`. Production URL: https://dental-website-nu-seven.vercel.app. Redeploy with `npx vercel --prod` from this folder.
 - **Status (end of session 1):** latest version deployed to Vercel and publicly reachable. The main link was public even while Vercel Authentication was on, and the owner has since disabled that setting, so every deployment URL is public. Anyone with the link can open the site and the booking form works for them. To hide it again before launch, take the deployment down or use paid Password Protection.
 - Git remote `origin` is https://github.com/MihirSingh06/mv-nzama-dental.git. First push succeeded on 2026-10-19 (main tracks origin/main).
-- The Vercel project is not yet connected to the GitHub repo (connect it after the first push for auto-deploys).
+- The Vercel project is connected to the GitHub repo (since 2026-10-19), so every push to main deploys to production automatically. No need to run `npx vercel --prod`.
 - The owner is waiting to be paid before going live, so do not publish the site or point a domain without checking.
 
 ## Still to do
