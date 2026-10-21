@@ -30,7 +30,8 @@ Hero collage, "ways to book" strip, Treatments (incl. in-house surgeon group), "
 - Vercel project: `dental-website`. Production URL: https://dental-website-nu-seven.vercel.app. Redeploy with `npx vercel --prod` from this folder.
 - **Status (end of session 1):** latest version deployed to Vercel and publicly reachable. The main link was public even while Vercel Authentication was on, and the owner has since disabled that setting, so every deployment URL is public. Anyone with the link can open the site and the booking form works for them. To hide it again before launch, take the deployment down or use paid Password Protection.
 - Git remote `origin` is https://github.com/MihirSingh06/mv-nzama-dental.git. First push succeeded on 2026-10-19 (main tracks origin/main).
-- The Vercel project is connected to the GitHub repo (since 2026-10-19), so every push to main deploys to production automatically. No need to run `npx vercel --prod`.
+- The Vercel project was connected to the GitHub repo on 2026-10-19, but on 2026-10-21 a push to main did **not** trigger a deploy (no new deployment appeared). Round 3 went live via `npx vercel --prod --yes --scope mihirsingh06s-projects`. After each push, check `npx vercel ls dental-website --scope mihirsingh06s-projects` and deploy with the CLI if nothing new appears. Check the Git connection in the Vercel project settings.
+- Pushing from Claude Code: the session sets GCM_INTERACTIVE=never and GIT_TERMINAL_PROMPT=0. Clearing them for the push command (`Remove-Item Env:GCM_INTERACTIVE, Env:GIT_TERMINAL_PROMPT, Env:GIT_ASKPASS`) lets Git Credential Manager use the saved personal login.
 - The owner is waiting to be paid before going live, so do not publish the site or point a domain without checking.
 
 ## Still to do
