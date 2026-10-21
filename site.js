@@ -5,14 +5,14 @@ const PRACTICE = {
   whatsappDisplay: "081 811 5426",
   instagram: "https://www.instagram.com/mvnzama/",
   instagramHandle: "@mvnzama",
+  // Self-service booking in the practice's MyKIT system (one link for both branches)
+  bookingUrl: "https://appointments.mykit.co.za/?bhf=9500197",
   montclair: {
     name: "Montclair",
     phone: "031 462 1723",
     address: "139 Montclair Road, Montclair, Durban, 4004",
     addressShort: "139 Montclair Road",
-    mapQuery: "139 Montclair Road, Montclair, Durban 4004",
-    // Self-service booking in the practice's MyKIT system (BHF practice number in the link)
-    bookingUrl: "https://appointments.mykit.co.za/?bhf=9500197"
+    mapQuery: "139 Montclair Road, Montclair, Durban 4004"
   },
   umlazi: {
     name: "Umlazi",
@@ -38,7 +38,7 @@ const get = path => path.split(".").reduce((o, k) => o[k], PRACTICE);
 $$("[data-bind]").forEach(el => el.textContent = get(el.dataset.bind));
 $$("[data-tel]").forEach(el => el.href = "tel:" + PRACTICE[el.dataset.tel || "montclair"].phone.replace(/\s/g,""));
 $$("[data-mail]").forEach(el => el.href = "mailto:" + PRACTICE.email);
-$$("[data-book]").forEach(el => el.href = PRACTICE[el.dataset.book].bookingUrl);
+$$("[data-book]").forEach(el => el.href = PRACTICE.bookingUrl);
 $$("[data-ig]").forEach(el => el.href = PRACTICE.instagram);
 $$("[data-wa]").forEach(el =>
   el.href = `https://wa.me/${PRACTICE.whatsapp}?text=${enc("Hi, I'd like to know more / book an appointment at MV Nzama Dental.")}`);

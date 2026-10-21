@@ -31,6 +31,7 @@
   "name": "MV Nzama Dental (Umlazi)",
   "slogan": "We honour your trust",
   "telephone": "+27319091848",
+  "foundingDate": "1996",
   "address": {"@type": "PostalAddress", "streetAddress": "Umlazi AA Medical Centre, 235 Simelane Drive", "addressLocality": "Umlazi, Durban", "addressCountry": "ZA"},
   "medicalSpecialty": "Dentistry"
 }]
@@ -170,6 +171,9 @@ input:focus,select:focus,textarea:focus{outline:2px solid var(--forest);border-c
 .instant b{font:700 1.2rem Outfit,sans-serif}
 .instant p{color:#cfe0d5;font-size:.9rem}
 .instant .btn{justify-self:start}
+.instant .alt{font-size:.85rem}
+.instant .alt a{color:var(--lime);font-weight:600}
+#branches{scroll-margin-top:90px}
 @media(max-width:860px){.book-grid{grid-template-columns:1fr}.row,.send{grid-template-columns:1fr}}
 
 /* find us */
@@ -425,7 +429,7 @@ input:focus,select:focus,textarea:focus{outline:2px solid var(--forest);border-c
     </div>
 
     <h3 class="sub rv">Our practice</h3>
-    <p class="subp rv">139 Montclair Road, Montclair. Safe parking, a wheelchair ramp to the front door and an accessible toilet.</p>
+    <p class="subp rv">Our Montclair practice at 139 Montclair Road. Both practices have safe parking, a wheelchair ramp to the front door and an accessible toilet.</p>
     <div class="photos rv">
       <figure class="wide tall" data-zoom><img src="images/practice-front.jpg" alt="Front entrance of MV Nzama Dental" loading="lazy" style="object-position:50% 65%"><figcaption>Our front entrance</figcaption></figure>
       <figure data-zoom><img src="images/waiting-room.jpg" alt="Bright waiting area" loading="lazy"><figcaption>Waiting area</figcaption></figure>
@@ -445,11 +449,12 @@ input:focus,select:focus,textarea:focus{outline:2px solid var(--forest);border-c
       <h2>Request an appointment</h2>
       <p style="color:var(--muted)">Send a request below and we'll get back to you to confirm a time. Prefer to talk? Call the practice nearest you, WhatsApp us or pop in.</p>
       <div class="instant">
-        <b>Montclair: book a slot yourself</b>
-        <p>Pick a time in our appointment system. You'll need the main member's ID or cell number.</p>
-        <a class="btn btn-primary" data-book="montclair" href="#" target="_blank" rel="noopener">Book a Montclair slot</a>
+        <b>Book a slot yourself</b>
+        <p>Pick a time in our appointment system, for Montclair or Umlazi. You'll need the main member's ID or cell number.</p>
+        <a class="btn btn-lime" data-book href="#" target="_blank" rel="noopener">Book a slot</a>
+        <p class="alt">Can't sign in, or new to the practice? <a href="#branches">Call your nearest practice</a> or send a request with the form.</p>
       </div>
-      <div class="branches">
+      <div class="branches" id="branches">
         <div class="branch"><b><svg class="ic"><use href="#i-pin"/></svg>Montclair</b><a data-tel="montclair" href="#" data-bind="montclair.phone"></a><span data-bind="montclair.address"></span></div>
         <div class="branch"><b><svg class="ic"><use href="#i-pin"/></svg>Umlazi</b><a data-tel="umlazi" href="#" data-bind="umlazi.phone"></a><span data-bind="umlazi.address"></span></div>
       </div>
@@ -514,7 +519,7 @@ input:focus,select:focus,textarea:focus{outline:2px solid var(--forest);border-c
   <div class="wrap">
     <div class="head rv">
       <div><p class="eyebrow">Find us</p><h2>Find your practice</h2></div>
-      <p>Two practices, the same gentle care. Tap for directions.</p>
+      <p>Two practices, the same gentle care. Both have safe parking, a wheelchair ramp and an accessible toilet. Tap for directions.</p>
     </div>
     <div class="locs">
       <div class="loc rv">
