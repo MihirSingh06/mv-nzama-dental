@@ -21,9 +21,6 @@ const PRACTICE = {
     addressShort: "235 Simelane Drive",
     mapQuery: "235 Simelane Drive, Umlazi, Durban"
   },
-  // Online booking delivery (free service: formsubmit.co). The first submission sends
-  // an activation email to this address; click the link in it once to switch it on.
-  formEndpoint: "https://formsubmit.co/ajax/gawu@medi.co.za",
   // Paste the Google review link from the practice's Google Business Profile
   // ("Get more reviews" > share link). The button stays hidden while this is empty.
   reviewUrl: ""
@@ -57,20 +54,18 @@ document.body.insertAdjacentHTML("beforeend", `
 <dialog id="privacy">
   <h2>Privacy notice</h2>
   <p>MV Nzama Dental respects your privacy and handles personal information in line with the Protection of Personal Information Act (POPIA).</p>
-  <h3>What we collect</h3>
-  <p>If you use our booking form we collect your name, phone number, email address (optional), the practice you'd like to visit, preferred date and time, reason for your visit, and any notes you add.</p>
-  <h3>Why we collect it</h3>
-  <p>Only to contact you about your appointment request and to arrange your visit. We do not sell your information or use it for marketing.</p>
-  <h3>Who sees it</h3>
+  <h3>This website</h3>
+  <p>This website has no forms and does not ask for your personal details. Maps and fonts on the page are loaded from Google.</p>
+  <h3>Booking and contacting us</h3>
   <ul>
-    <li>Our practice staff.</li>
-    <li>Our form provider (FormSubmit), which passes your request to our email. If you choose the WhatsApp or Email buttons instead, your message goes through those services.</li>
-    <li>If you book a slot in our appointment system (MyKIT), your details are handled by that system.</li>
+    <li>If you book online, you use our appointment system (MyKIT). The details you enter there go to our practice to manage your appointment.</li>
+    <li>If you call, WhatsApp or email us, our practice staff receive your message through those services.</li>
   </ul>
+  <p>We use your details only to arrange your visit and care. We do not sell your information or use it for marketing.</p>
   <h3>Your rights</h3>
   <p>You may ask to see, correct or delete the information we hold about you by contacting us on ${PRACTICE.montclair.phone} or ${PRACTICE.email}. If you have a complaint you can contact the Information Regulator of South Africa.</p>
   <h3>Health information</h3>
-  <p>Please don't put detailed medical information in the booking form. Share that with us in person at your consultation.</p>
+  <p>Please don't send detailed medical information by WhatsApp or email. Share that with us in person at your consultation.</p>
   <button class="btn btn-primary" type="button" id="closePrivacy">Close</button>
 </dialog>`);
 const dlg = $("#privacy");

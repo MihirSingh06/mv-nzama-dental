@@ -141,40 +141,30 @@
 
 /* booking */
 .book{background:var(--lime-soft)}
-.book-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:40px;align-items:start}
+.book-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:40px;align-items:start}
 .book-grid h2{color:var(--forest-dark)}
-.branches{display:grid;gap:12px;margin:26px 0 18px}
-.branch{background:#fff;border-radius:20px;padding:18px 20px;display:grid;gap:4px}
+.book .lead{color:var(--muted);font-size:1.05rem}
+.instant{background:var(--forest);color:#fff;border-radius:28px;padding:32px;display:grid;gap:14px;margin-top:26px;box-shadow:0 20px 50px rgba(31,66,49,.18)}
+.instant b{font:700 1.6rem Outfit,sans-serif}
+.instant p{color:#cfe0d5}
+.instant .btn{justify-self:start;font-size:1.1rem;padding:16px 34px}
+.instant .alt{font-size:.88rem}
+.instant .alt a{color:var(--lime);font-weight:600}
+.help{background:#fff;border-radius:28px;padding:30px;display:grid;gap:14px;scroll-margin-top:90px}
+.help h3{font-size:1.35rem;color:var(--forest-dark)}
+.help>p{color:var(--muted);font-size:.95rem}
+.help .btn-wa{justify-self:start}
+.branches{display:grid;gap:12px}
+.branch{background:var(--cream);border-radius:20px;padding:18px 20px;display:grid;gap:4px}
 .branch b{font:700 1.15rem Outfit,sans-serif;color:var(--forest-dark);display:flex;align-items:center;gap:8px}
 .branch b .ic{width:20px;height:20px;color:var(--lime-ink)}
 .branch a{color:var(--forest);font-weight:600;font-size:1.05rem}
 .branch span{color:var(--muted);font-size:.9rem}
-form{background:#fff;border-radius:28px;padding:30px;display:grid;gap:14px;box-shadow:0 20px 50px rgba(31,66,49,.12)}
-.row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-label{font-size:.85rem;font-weight:600;display:grid;gap:6px}
-input,select,textarea{font:inherit;padding:11px 12px;border:1.5px solid var(--line);border-radius:12px;background:#fff;color:var(--ink);width:100%}
-input:focus,select:focus,textarea:focus{outline:2px solid var(--forest);border-color:transparent}
-.send{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.note{font-size:.8rem;color:var(--muted)}
-.status{font-weight:600;font-size:.92rem;display:none;padding:12px 14px;border-radius:10px}
-.status.ok{display:block;background:var(--lime-soft);color:var(--forest-dark)}
-.status.err{display:block;background:#fdecee;color:#a3122a}
-.hp{position:absolute;left:-9999px}
 .contact-list{list-style:none;display:grid;gap:10px}
 .contact-list li{display:flex;gap:10px;align-items:center}
 .contact-list .ic{width:20px;height:20px;color:var(--forest)}
 .contact-list a{color:var(--forest);font-weight:600}
-.consent{display:flex;gap:10px;align-items:flex-start;font-weight:400;font-size:.82rem;color:var(--muted)}
-.consent input{width:auto;margin-top:3px}
-.consent a{color:var(--forest);font-weight:600}
-.instant{background:var(--forest);color:#fff;border-radius:22px;padding:20px 22px;display:grid;gap:10px;margin:26px 0 0}
-.instant b{font:700 1.2rem Outfit,sans-serif}
-.instant p{color:#cfe0d5;font-size:.9rem}
-.instant .btn{justify-self:start}
-.instant .alt{font-size:.85rem}
-.instant .alt a{color:var(--lime);font-weight:600}
-#branches{scroll-margin-top:90px}
-@media(max-width:860px){.book-grid{grid-template-columns:1fr}.row,.send{grid-template-columns:1fr}}
+@media(max-width:860px){.book-grid{grid-template-columns:1fr}.instant,.help{padding:24px}}
 
 /* find us */
 .locs{display:grid;grid-template-columns:1fr 1fr;gap:24px}
@@ -294,7 +284,7 @@ input:focus,select:focus,textarea:focus{outline:2px solid var(--forest);border-c
       </div>
     </div>
     <div class="ways">
-      <a href="#book"><svg class="ic"><use href="#i-laptop"/></svg><span><b>Book online</b><small>We confirm your slot</small></span></a>
+      <a href="#book"><svg class="ic"><use href="#i-laptop"/></svg><span><b>Book online</b><small>Pick your own slot</small></span></a>
       <a data-tel="montclair" href="#"><svg class="ic"><use href="#i-phone"/></svg><span><b>Call Montclair</b><small data-bind="montclair.phone"></small></span></a>
       <a data-tel="umlazi" href="#"><svg class="ic"><use href="#i-phone"/></svg><span><b>Call Umlazi</b><small data-bind="umlazi.phone"></small></span></a>
       <a data-wa href="#" target="_blank" rel="noopener"><svg class="ic"><use href="#i-chat"/></svg><span><b>WhatsApp</b><small data-bind="whatsappDisplay"></small></span></a>
@@ -446,72 +436,29 @@ input:focus,select:focus,textarea:focus{outline:2px solid var(--forest);border-c
   <div class="wrap book-grid">
     <div class="rv">
       <p class="eyebrow">Book online</p>
-      <h2>Request an appointment</h2>
-      <p style="color:var(--muted)">Send a request below and we'll get back to you to confirm a time. Prefer to talk? Call the practice nearest you, WhatsApp us or pop in.</p>
+      <h2>Book an appointment</h2>
+      <p class="lead">Choose your own time in our appointment system, for Montclair or Umlazi.</p>
       <div class="instant">
         <b>Book a slot yourself</b>
-        <p>Pick a time in our appointment system, for Montclair or Umlazi. You'll need the main member's ID or cell number.</p>
+        <p>Sign in with the main member's ID or cell number, then pick a day and time that suits you.</p>
         <a class="btn btn-lime" data-book href="#" target="_blank" rel="noopener">Book a slot</a>
-        <p class="alt">Can't sign in, or new to the practice? <a href="#branches">Call your nearest practice</a> or send a request with the form.</p>
+        <p class="alt">Can't sign in, or new to the practice? <a href="#branches">Call or WhatsApp us</a> and we'll find a time for you.</p>
       </div>
-      <div class="branches" id="branches">
+    </div>
+
+    <div class="help rv" id="branches">
+      <h3>Can't sign in, or new to the practice?</h3>
+      <p>Call the practice nearest you, WhatsApp us or pop in. We'll book you in.</p>
+      <div class="branches">
         <div class="branch"><b><svg class="ic"><use href="#i-pin"/></svg>Montclair</b><a data-tel="montclair" href="#" data-bind="montclair.phone"></a><span data-bind="montclair.address"></span></div>
         <div class="branch"><b><svg class="ic"><use href="#i-pin"/></svg>Umlazi</b><a data-tel="umlazi" href="#" data-bind="umlazi.phone"></a><span data-bind="umlazi.address"></span></div>
       </div>
+      <a class="btn btn-wa" data-wa href="#" target="_blank" rel="noopener">WhatsApp us on <span data-bind="whatsappDisplay"></span></a>
       <ul class="contact-list">
-        <li><svg class="ic"><use href="#i-chat"/></svg><span><a data-wa href="#" target="_blank" rel="noopener" data-bind="whatsappDisplay"></a> (WhatsApp)</span></li>
         <li><svg class="ic"><use href="#i-mail"/></svg><a data-mail href="#" data-bind="email"></a></li>
         <li><svg class="ic"><use href="#i-insta"/></svg><span><a data-ig href="#" target="_blank" rel="noopener" data-bind="instagramHandle"></a> (Instagram)</span></li>
       </ul>
     </div>
-
-    <form id="bookForm" class="rv" novalidate>
-      <input class="hp" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true">
-      <div class="row">
-        <label>Full name<input name="name" required autocomplete="name"></label>
-        <label>Phone / WhatsApp<input name="phone" type="tel" required autocomplete="tel"></label>
-      </div>
-      <div class="row">
-        <label>Email (optional)<input name="email" type="email" autocomplete="email"></label>
-        <label>Which practice?
-          <select name="branch"><option>Montclair</option><option>Umlazi</option></select>
-        </label>
-      </div>
-      <div class="row">
-        <label>Preferred date<input name="date" type="date" required></label>
-        <label>Preferred time
-          <select name="time"><option>Morning</option><option>Afternoon</option><option>Any time</option></select>
-        </label>
-      </div>
-      <label>Reason for visit
-        <select name="reason">
-          <option>Consultation / check-up</option>
-          <option>Toothache / pain</option>
-          <option>Scaling &amp; polishing</option>
-          <option>Oral hygiene / dietary advice</option>
-          <option>Child's check-up</option>
-          <option>Tooth extraction</option>
-          <option>Filling</option>
-          <option>Root canal treatment</option>
-          <option>Crown / bridge / veneers</option>
-          <option>Dentures (false teeth)</option>
-          <option>Braces</option>
-          <option>Crown recementation</option>
-          <option>Gold / silver removal</option>
-          <option>Teeth whitening</option>
-          <option>Other</option>
-        </select>
-      </label>
-      <label>Anything else we should know?<textarea name="notes" rows="3"></textarea></label>
-      <label class="consent"><input type="checkbox" name="consent" required> <span>I agree that MV Nzama Dental may use these details to contact me about my appointment. <a href="#privacy" data-privacy>Privacy notice</a></span></label>
-      <button type="submit" class="btn btn-primary" id="submitBtn">Request appointment</button>
-      <div class="send">
-        <button type="button" class="btn btn-wa" id="sendWa">Send by WhatsApp</button>
-        <button type="button" class="btn btn-mail" id="sendEmail">Send by Email</button>
-      </div>
-      <div class="status" id="status" role="status"></div>
-      <p class="note">This is a request, not a confirmed booking. We'll contact you to confirm a time.</p>
-    </form>
   </div>
 </section>
 
@@ -565,8 +512,6 @@ input:focus,select:focus,textarea:focus{outline:2px solid var(--forest);border-c
 
 <script src="site.js"></script>
 <script>
-$("[name=date]").min = new Date().toISOString().split("T")[0];
-
 $("#frames").addEventListener("click", () => zoom({src:"images/result-2.jpg", alt:"Before, during and after restoration of front teeth"}));
 
 /* before / during / after viewer: plays while on screen, stops once a visitor picks a stage */
@@ -586,70 +531,6 @@ const play = () => { if(manual || reduce || timer) return; timer = setInterval((
 const stop = () => { clearInterval(timer); timer = null; go(stage); };
 tabs.forEach((t, n) => t.addEventListener("click", () => { manual = true; stop(); go(n); }));
 new IntersectionObserver(([e]) => e.isIntersecting ? play() : stop(), {threshold:.4}).observe($("#frames"));
-
-const form = $("#bookForm"), status = $("#status");
-const v = n => form.elements[n].value.trim();
-
-function show(msg, ok){ status.textContent = msg; status.className = "status " + (ok ? "ok" : "err"); }
-
-function valid(){
-  if(!v("name") || !v("phone") || !v("date")){
-    show("Please fill in your name, phone number and preferred date.", false);
-    return false;
-  }
-  if(!form.elements.consent.checked){
-    show("Please tick the box to agree to us contacting you.", false);
-    return false;
-  }
-  return true;
-}
-function prettyDate(){
-  return new Date(v("date") + "T00:00").toLocaleDateString("en-ZA",{weekday:"long",year:"numeric",month:"long",day:"numeric"});
-}
-function message(){
-  return ["Appointment request – MV Nzama Dental","",
-    "Practice: " + v("branch"),
-    "Name: " + v("name"), "Phone: " + v("phone"),
-    v("email") ? "Email: " + v("email") : null,
-    "Preferred date: " + prettyDate(), "Preferred time: " + v("time"),
-    "Reason: " + v("reason"),
-    v("notes") ? "Notes: " + v("notes") : null
-  ].filter(Boolean).join("\n");
-}
-
-form.addEventListener("submit", async e => {
-  e.preventDefault();
-  if(!valid() || v("_honey")) return;
-  const btn = $("#submitBtn"); btn.disabled = true; btn.textContent = "Sending…";
-  try{
-    const r = await fetch(PRACTICE.formEndpoint, {
-      method:"POST",
-      headers:{"Content-Type":"application/json","Accept":"application/json"},
-      body: JSON.stringify({
-        _subject: `Appointment request (${v("branch")}) – ${v("name")}`,
-        _template: "table",
-        Practice: v("branch"),
-        Name: v("name"), Phone: v("phone"), Email: v("email") || "—",
-        "Preferred date": prettyDate(), "Preferred time": v("time"),
-        Reason: v("reason"), Notes: v("notes") || "—"
-      })
-    });
-    const d = await r.json().catch(() => ({}));
-    if(!r.ok || d.success === "false") throw new Error();
-    show("Thank you! Your request has been sent. We'll contact you to confirm your appointment.", true);
-    form.reset();
-  }catch{
-    const b = PRACTICE[v("branch").toLowerCase()] || PRACTICE.montclair;
-    show("Sorry, we couldn't send that automatically. Please use the WhatsApp or Email button below, or call us on " + b.phone + ".", false);
-  }finally{
-    btn.disabled = false; btn.textContent = "Request appointment";
-  }
-});
-
-$("#sendWa").onclick = () => { if(!valid()) return;
-  window.open(`https://wa.me/${PRACTICE.whatsapp}?text=${enc(message())}`, "_blank", "noopener"); };
-$("#sendEmail").onclick = () => { if(!valid()) return;
-  location.href = `mailto:${PRACTICE.email}?subject=${enc(`Appointment request (${v("branch")}) – ${v("name")}`)}&body=${enc(message())}`; };
 </script>
 </body>
 </html>
