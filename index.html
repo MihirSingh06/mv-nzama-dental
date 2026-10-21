@@ -18,9 +18,10 @@
   "@type": "Dentist",
   "name": "MV Nzama Dental (Montclair)",
   "slogan": "We honour your trust",
-  "description": "Family-orientated and child-friendly dental practice offering consultations, dental X-rays, scaling and polishing, extractions, fillings, root canal treatment, crowns, bridges, veneers, dentures, braces, crown recementation, gold and silver removal and teeth whitening.",
+  "description": "Family-orientated and child-friendly dental practice offering consultations, dental X-rays, scaling and polishing, oral hygiene instructions, dietary counselling, children's dentistry, extractions, fillings with biomimetic dental materials, root canal treatment, crowns, bridges, veneers, dentures, braces, crown recementation, gold and silver removal and teeth whitening.",
   "telephone": "+27314621723",
-  "email": "melodious@medi.co.za",
+  "email": "gawu@medi.co.za",
+  "foundingDate": "1996",
   "sameAs": ["https://www.instagram.com/mvnzama/"],
   "address": {"@type": "PostalAddress", "streetAddress": "139 Montclair Road", "addressLocality": "Montclair, Durban", "postalCode": "4004", "addressCountry": "ZA"},
   "medicalSpecialty": "Dentistry"
@@ -91,6 +92,11 @@
 .listen h3{font-family:Caveat,cursive;font-weight:600;font-size:1.9rem;color:var(--forest);line-height:1;margin-bottom:4px;letter-spacing:0}
 .listen p{color:var(--muted);font-size:.95rem}
 .about-grid .chips li{background:var(--lime-soft);border-color:transparent}
+.promise{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:10px 18px;margin-top:20px}
+.promise li{display:flex;gap:10px;align-items:flex-start;font-size:.93rem;color:var(--muted)}
+.promise b{color:var(--forest-dark);display:block}
+.promise .ic{width:22px;height:22px;color:var(--lime-ink);margin-top:1px}
+@media(max-width:520px){.promise{grid-template-columns:1fr}}
 @media(max-width:860px){.about-grid{grid-template-columns:1fr;gap:36px}}
 
 /* services */
@@ -160,6 +166,10 @@ input:focus,select:focus,textarea:focus{outline:2px solid var(--forest);border-c
 .consent{display:flex;gap:10px;align-items:flex-start;font-weight:400;font-size:.82rem;color:var(--muted)}
 .consent input{width:auto;margin-top:3px}
 .consent a{color:var(--forest);font-weight:600}
+.instant{background:var(--forest);color:#fff;border-radius:22px;padding:20px 22px;display:grid;gap:10px;margin:26px 0 0}
+.instant b{font:700 1.2rem Outfit,sans-serif}
+.instant p{color:#cfe0d5;font-size:.9rem}
+.instant .btn{justify-self:start}
 @media(max-width:860px){.book-grid{grid-template-columns:1fr}.row,.send{grid-template-columns:1fr}}
 
 /* find us */
@@ -235,6 +245,10 @@ input:focus,select:focus,textarea:focus{outline:2px solid var(--forest);border-c
   <symbol id="i-chat" viewBox="0 0 24 24"><path d="M4 5.5A1.5 1.5 0 0 1 5.5 4h13A1.5 1.5 0 0 1 20 5.5v9a1.5 1.5 0 0 1-1.5 1.5H9l-5 4z"/><path d="M8.5 10h.01M12 10h.01M15.5 10h.01"/></symbol>
   <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21.5s-7-6.3-7-12a7 7 0 0 1 14 0c0 5.7-7 12-7 12z"/><circle cx="12" cy="9.5" r="2.5"/></symbol>
   <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20s-8-4.7-8-10.6A4.4 4.4 0 0 1 12 7a4.4 4.4 0 0 1 8 2.4C20 15.3 12 20 12 20z"/></symbol>
+  <symbol id="i-brush" viewBox="0 0 24 24"><rect x="9" y="2" width="6" height="9" rx="2.5"/><path d="M12 11v10.5M9 4.5H6.5M9 7H6.5M9 9.5H6.5"/></symbol>
+  <symbol id="i-apple" viewBox="0 0 24 24"><path d="M12 7.5c-1.6-1.3-4.2-1.4-5.8.1-1.9 1.8-1.9 5.4-.7 8.4 1.1 2.8 3 5.2 4.8 5.2.7 0 1.1-.4 1.7-.4s1 .4 1.7.4c1.8 0 3.7-2.4 4.8-5.2 1.2-3 1.2-6.6-.7-8.4-1.6-1.5-4.2-1.4-5.8-.1z"/><path d="M12 7.5c0-2.2 1-3.8 2.8-4.8"/></symbol>
+  <symbol id="i-child" viewBox="0 0 24 24"><circle cx="12" cy="12.5" r="8.5"/><path d="M8.6 14.6c1.9 2 4.9 2 6.8 0M9.2 10.8h.01M14.8 10.8h.01M12 4c-1.6-.3-2.6 1.4-1.4 2.3"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 12.3l2.7 2.7L16 9.5"/></symbol>
   <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 6.5l8.5 6 8.5-6"/></symbol>
 </svg>
 
@@ -260,7 +274,7 @@ input:focus,select:focus,textarea:focus{outline:2px solid var(--forest);border-c
       <div>
         <p class="tag"><svg class="ic"><use href="#i-heart"/></svg>Gentle dentistry, genuine care</p>
         <h1>Healthy smiles for the <span class="hl">whole family.</span></h1>
-        <p class="sub">We are a family-orientated practice, here to serve. Visit us in Montclair or Umlazi.</p>
+        <p class="sub">A family-orientated practice, caring for smiles since 1996. Visit us in Montclair or Umlazi.</p>
         <div class="hero-actions">
           <a href="#book" class="btn btn-primary">Book an appointment</a>
           <a class="btn btn-wa" data-wa href="#" target="_blank" rel="noopener">WhatsApp us</a>
@@ -291,9 +305,9 @@ input:focus,select:focus,textarea:focus{outline:2px solid var(--forest);border-c
       <div class="b"><img src="images/signboard.jpg" alt="MV Nzama Dental sign: helping families to smile" loading="lazy"></div>
     </div>
     <div class="rv">
-      <p class="eyebrow">Welcome to our practice</p>
+      <p class="eyebrow">Welcome to our practice · Since 1996</p>
       <h2>Good dental care begins with trust.</h2>
-      <p>We are a family-orientated and child-friendly practice that is here to cater to all your dental needs. We care about the people who walk through our doors, not only their teeth. Every visit starts with listening, so you understand your options and feel at ease in the chair.</p>
+      <p>Since 1996, we have been a family-orientated and child-friendly practice that is here to cater to all your dental needs. We care about the people who walk through our doors, not only their teeth. Every visit starts with listening, so you understand your options and feel at ease in the chair.</p>
       <div class="listen">
         <svg class="ic"><use href="#i-heart"/></svg>
         <div>
@@ -301,6 +315,12 @@ input:focus,select:focus,textarea:focus{outline:2px solid var(--forest);border-c
           <p>Tell us what's worrying you. We take the time to hear you out, explain things clearly and treat you gently, whether it's your child's first check-up or a treatment you've been putting off.</p>
         </div>
       </div>
+      <ul class="promise">
+        <li><svg class="ic"><use href="#i-check"/></svg><span><b>We listen first</b>Your concerns come before anything else.</span></li>
+        <li><svg class="ic"><use href="#i-check"/></svg><span><b>We explain clearly</b>Everything is explained before treatment.</span></li>
+        <li><svg class="ic"><use href="#i-check"/></svg><span><b>You decide</b>No unnecessary pressure, ever.</span></li>
+        <li><svg class="ic"><use href="#i-check"/></svg><span><b>With dignity</b>Every patient is treated with respect.</span></li>
+      </ul>
       <ul class="chips">
         <li>Gentle dental care</li><li>Kiddies friendly</li><li>Affordable cash rates</li><li>Contracted to all medical aids</li>
       </ul>
@@ -322,8 +342,11 @@ input:focus,select:focus,textarea:focus{outline:2px solid var(--forest);border-c
           <li><svg class="ic"><use href="#i-consult"/></svg><b>Consultation</b><small>Check-up &amp; treatment plan</small></li>
           <li><svg class="ic"><use href="#i-xray"/></svg><b>Dental X-rays</b><small>Done on site</small></li>
           <li><svg class="ic"><use href="#i-clean"/></svg><b>Scaling &amp; polishing</b><small>A professional clean</small></li>
+          <li><svg class="ic"><use href="#i-brush"/></svg><b>Oral hygiene instructions</b><small>Brushing &amp; flossing that works</small></li>
+          <li><svg class="ic"><use href="#i-apple"/></svg><b>Dietary counselling</b><small>Food choices for healthy teeth</small></li>
+          <li><svg class="ic"><use href="#i-child"/></svg><b>Children's dentistry</b><small>A gentle first visit for little ones</small></li>
           <li><svg class="ic"><use href="#i-extract"/></svg><b>Tooth extraction</b><small>Gentle removal</small></li>
-          <li><svg class="ic"><use href="#i-filling"/></svg><b>Fillings</b><small>Restore decayed or damaged teeth</small></li>
+          <li><svg class="ic"><use href="#i-filling"/></svg><b>Fillings</b><small>Restore decayed or damaged teeth using biomimetic dental materials</small></li>
           <li><svg class="ic"><use href="#i-onlay"/></svg><b>Gold &amp; silver removal</b><small>Old gold or silver work taken off</small></li>
           <li><svg class="ic"><use href="#i-recement"/></svg><b>Crown recementation</b><small>Loose crown fixed back in place</small></li>
         </ul>
@@ -402,7 +425,7 @@ input:focus,select:focus,textarea:focus{outline:2px solid var(--forest);border-c
     </div>
 
     <h3 class="sub rv">Our practice</h3>
-    <p class="subp rv">139 Montclair Road, Montclair. Easy parking, with a ramp to the front door.</p>
+    <p class="subp rv">139 Montclair Road, Montclair. Safe parking, a wheelchair ramp to the front door and an accessible toilet.</p>
     <div class="photos rv">
       <figure class="wide tall" data-zoom><img src="images/practice-front.jpg" alt="Front entrance of MV Nzama Dental" loading="lazy" style="object-position:50% 65%"><figcaption>Our front entrance</figcaption></figure>
       <figure data-zoom><img src="images/waiting-room.jpg" alt="Bright waiting area" loading="lazy"><figcaption>Waiting area</figcaption></figure>
@@ -420,7 +443,12 @@ input:focus,select:focus,textarea:focus{outline:2px solid var(--forest);border-c
     <div class="rv">
       <p class="eyebrow">Book online</p>
       <h2>Request an appointment</h2>
-      <p style="color:var(--muted)">Send a request and we'll get back to you to confirm a time. Prefer to talk? Call the practice nearest you, WhatsApp us or pop in.</p>
+      <p style="color:var(--muted)">Send a request below and we'll get back to you to confirm a time. Prefer to talk? Call the practice nearest you, WhatsApp us or pop in.</p>
+      <div class="instant">
+        <b>Montclair: book a slot yourself</b>
+        <p>Pick a time in our appointment system. You'll need the main member's ID or cell number.</p>
+        <a class="btn btn-primary" data-book="montclair" href="#" target="_blank" rel="noopener">Book a Montclair slot</a>
+      </div>
       <div class="branches">
         <div class="branch"><b><svg class="ic"><use href="#i-pin"/></svg>Montclair</b><a data-tel="montclair" href="#" data-bind="montclair.phone"></a><span data-bind="montclair.address"></span></div>
         <div class="branch"><b><svg class="ic"><use href="#i-pin"/></svg>Umlazi</b><a data-tel="umlazi" href="#" data-bind="umlazi.phone"></a><span data-bind="umlazi.address"></span></div>
@@ -455,6 +483,8 @@ input:focus,select:focus,textarea:focus{outline:2px solid var(--forest);border-c
           <option>Consultation / check-up</option>
           <option>Toothache / pain</option>
           <option>Scaling &amp; polishing</option>
+          <option>Oral hygiene / dietary advice</option>
+          <option>Child's check-up</option>
           <option>Tooth extraction</option>
           <option>Filling</option>
           <option>Root canal treatment</option>
@@ -511,7 +541,7 @@ input:focus,select:focus,textarea:focus{outline:2px solid var(--forest);border-c
 
 <footer>
   <div class="wrap">
-    <div><b>MV Nzama Dental</b><br><span class="hand">We honour your trust</span><br>© <span class="yr"></span></div>
+    <div><b>MV Nzama Dental</b><br><span class="hand">We honour your trust</span><br>Since 1996 · © <span class="yr"></span></div>
     <div><b>Montclair</b><br><span data-bind="montclair.address"></span><br><span data-bind="montclair.phone"></span></div>
     <div><b>Umlazi</b><br><span data-bind="umlazi.address"></span><br><span data-bind="umlazi.phone"></span></div>
     <div><a class="ig" data-ig href="#" target="_blank" rel="noopener"><svg class="ic"><use href="#i-insta"/></svg>Follow us on Instagram</a><br><button class="linkbtn" type="button" data-privacy>Privacy notice</button></div>

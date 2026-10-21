@@ -1,6 +1,6 @@
 /* ===== PRACTICE DETAILS (edit here) ===== */
 const PRACTICE = {
-  email: "melodious@medi.co.za",
+  email: "gawu@medi.co.za",
   whatsapp: "27818115426",          // international format, digits only
   whatsappDisplay: "081 811 5426",
   instagram: "https://www.instagram.com/mvnzama/",
@@ -10,7 +10,9 @@ const PRACTICE = {
     phone: "031 462 1723",
     address: "139 Montclair Road, Montclair, Durban, 4004",
     addressShort: "139 Montclair Road",
-    mapQuery: "139 Montclair Road, Montclair, Durban 4004"
+    mapQuery: "139 Montclair Road, Montclair, Durban 4004",
+    // Self-service booking in the practice's MyKIT system (BHF practice number in the link)
+    bookingUrl: "https://appointments.mykit.co.za/?bhf=9500197"
   },
   umlazi: {
     name: "Umlazi",
@@ -21,7 +23,7 @@ const PRACTICE = {
   },
   // Online booking delivery (free service: formsubmit.co). The first submission sends
   // an activation email to this address; click the link in it once to switch it on.
-  formEndpoint: "https://formsubmit.co/ajax/melodious@medi.co.za",
+  formEndpoint: "https://formsubmit.co/ajax/gawu@medi.co.za",
   // Paste the Google review link from the practice's Google Business Profile
   // ("Get more reviews" > share link). The button stays hidden while this is empty.
   reviewUrl: ""
@@ -36,6 +38,7 @@ const get = path => path.split(".").reduce((o, k) => o[k], PRACTICE);
 $$("[data-bind]").forEach(el => el.textContent = get(el.dataset.bind));
 $$("[data-tel]").forEach(el => el.href = "tel:" + PRACTICE[el.dataset.tel || "montclair"].phone.replace(/\s/g,""));
 $$("[data-mail]").forEach(el => el.href = "mailto:" + PRACTICE.email);
+$$("[data-book]").forEach(el => el.href = PRACTICE[el.dataset.book].bookingUrl);
 $$("[data-ig]").forEach(el => el.href = PRACTICE.instagram);
 $$("[data-wa]").forEach(el =>
   el.href = `https://wa.me/${PRACTICE.whatsapp}?text=${enc("Hi, I'd like to know more / book an appointment at MV Nzama Dental.")}`);
@@ -62,6 +65,7 @@ document.body.insertAdjacentHTML("beforeend", `
   <ul>
     <li>Our practice staff.</li>
     <li>Our form provider (FormSubmit), which passes your request to our email. If you choose the WhatsApp or Email buttons instead, your message goes through those services.</li>
+    <li>If you book a slot in our appointment system (MyKIT), your details are handled by that system.</li>
   </ul>
   <h3>Your rights</h3>
   <p>You may ask to see, correct or delete the information we hold about you by contacting us on ${PRACTICE.montclair.phone} or ${PRACTICE.email}. If you have a complaint you can contact the Information Regulator of South Africa.</p>
