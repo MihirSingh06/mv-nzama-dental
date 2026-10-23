@@ -184,7 +184,11 @@
 .gal h3.sub{font-size:clamp(1.6rem,3vw,2.2rem);margin:72px 0 6px}
 .gal p.subp{color:var(--muted);margin-bottom:28px}
 .res-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:24px;align-items:stretch}
-.res-left{display:flex;flex-direction:column;gap:24px}
+.res-left,.res-right{display:flex;flex-direction:column;gap:24px}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:3px;background:#dce7e7}
+.duo figure{position:relative;aspect-ratio:4/3;overflow:hidden;cursor:zoom-in}
+.duo img{width:100%;height:100%;object-fit:cover}
+.duo span{position:absolute;left:10px;top:10px;background:var(--lime);color:var(--forest-dark);font-weight:700;font-size:.78rem;padding:4px 10px;border-radius:999px}
 .viewer,.res-card{background:var(--forest);border-radius:26px;overflow:hidden;display:flex;flex-direction:column;color:#fff}
 .frames{position:relative;aspect-ratio:1080/348;cursor:zoom-in}
 .frames img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .6s}
@@ -412,22 +416,31 @@
         <p class="cap"><b>All smiles</b>A happy, confident smile after a visit.</p>
       </div>
       </div>
+      <div class="res-right">
       <div class="res-card rv">
         <div class="img" data-zoom><img src="images/result-1.jpg" alt="Before and after scaling and polishing" loading="lazy"></div>
         <p class="cap"><b>Scaling &amp; polishing</b>Heavy staining and build-up removed.</p>
+      </div>
+      <div class="res-card rv">
+        <div class="duo">
+          <figure data-zoom><img src="images/repair-before.jpg" alt="Before: chipped upper front teeth" loading="lazy"><span>Before</span></figure>
+          <figure data-zoom><img src="images/repair-after.jpg" alt="After: upper front teeth repaired" loading="lazy"><span>After</span></figure>
+        </div>
+        <p class="cap"><b>Chipped teeth repaired</b>Broken front teeth rebuilt.</p>
+      </div>
       </div>
     </div>
 
     <h3 class="sub rv">Our practice</h3>
     <p class="subp rv">Our Montclair practice at 139 Montclair Road. Both practices have safe parking, a wheelchair ramp to the front door and an accessible toilet.</p>
     <div class="photos rv">
-      <figure class="wide tall" data-zoom><img src="images/practice-front.jpg" alt="Front entrance of MV Nzama Dental" loading="lazy" style="object-position:50% 65%"><figcaption>Our front entrance</figcaption></figure>
+      <figure class="wide tall" data-zoom><img src="images/practice-ramp.jpg" alt="MV Nzama Dental in Montclair, with its sign, safe parking and a ramp to the front door" loading="lazy" style="object-position:50% 70%"><figcaption>Safe parking and a ramp to the front door</figcaption></figure>
       <figure data-zoom><img src="images/waiting-room.jpg" alt="Bright waiting area" loading="lazy"><figcaption>Waiting area</figcaption></figure>
       <figure data-zoom><img src="images/reception.jpg" alt="Reception desk" loading="lazy"><figcaption>Reception</figcaption></figure>
       <figure class="wide" data-zoom><img src="images/surgery-1.jpg" alt="Modern dental chair and equipment" loading="lazy" style="object-position:50% 65%"><figcaption>Treatment room</figcaption></figure>
-      <figure class="wide" data-zoom><img src="images/practice-sign.jpg" alt="The practice building and sign on Montclair Road" loading="lazy" style="object-position:50% 60%"><figcaption>On Montclair Road</figcaption></figure>
-      <figure data-zoom><img src="images/signboard.jpg" alt="MV Nzama Dental sign: helping families to smile" loading="lazy"><figcaption>Look out for our sign</figcaption></figure>
-      <figure data-zoom><img src="images/practice-street.jpg" alt="The practice seen from the street" loading="lazy" style="object-position:30% 60%"><figcaption>From the street</figcaption></figure>
+      <figure class="wide tall" data-zoom><img src="images/practice-front.jpg" alt="Front entrance of MV Nzama Dental" loading="lazy" style="object-position:50% 65%"><figcaption>Our front entrance</figcaption></figure>
+      <figure class="tall" data-zoom><img src="images/signboard.jpg" alt="MV Nzama Dental sign: helping families to smile" loading="lazy"><figcaption>Look out for our sign</figcaption></figure>
+      <figure class="tall" data-zoom><img src="images/practice-street.jpg" alt="The practice seen from the street" loading="lazy" style="object-position:40% 60%"><figcaption>From the street</figcaption></figure>
     </div>
   </div>
 </section>
