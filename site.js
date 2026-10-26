@@ -22,8 +22,11 @@ const PRACTICE = {
     mapQuery: "235 Simelane Drive, Umlazi, Durban"
   },
   // Paste the Google review link from the practice's Google Business Profile
-  // ("Get more reviews" > share link). The button stays hidden while this is empty.
-  reviewUrl: ""
+  // ("Get more reviews" > share link). Until then, the review buttons open the practice on Google Maps.
+  reviewUrl: "",
+  // Real Google reviews to show as cards (copy them word for word, first name only), e.g.
+  // { name: "Thandi", stars: 5, text: "Friendly staff and no pain at all.", when: "October 2026" }
+  reviews: []
 };
 /* ======================================== */
 
@@ -42,7 +45,22 @@ $$("[data-wa]").forEach(el =>
 $$("[data-map]").forEach(el => el.src = `https://www.google.com/maps?q=${enc(PRACTICE[el.dataset.map].mapQuery)}&output=embed`);
 $$("[data-dir]").forEach(el => el.href = `https://www.google.com/maps/dir/?api=1&destination=${enc(PRACTICE[el.dataset.dir].mapQuery)}`);
 $$(".yr").forEach(el => el.textContent = new Date().getFullYear());
-if(PRACTICE.reviewUrl) $$(".review").forEach(el => { el.href = PRACTICE.reviewUrl; el.classList.add("on"); });
+const mapsSearch = "https://www.google.com/maps/search/?api=1&query=" + enc("MV Nzama Dental, " + PRACTICE.montclair.mapQuery);
+$$("[data-review-read]").forEach(el => el.href = mapsSearch);
+$$("[data-review-write]").forEach(el => el.href = PRACTICE.reviewUrl || mapsSearch);
+
+/* review cards (text is set with textContent, so nothing in a review is treated as HTML) */
+const revGrid = $("#revGrid");
+if(revGrid) PRACTICE.reviews.forEach(r => {
+  const card = document.createElement("figure"); card.className = "rev rv";
+  card.innerHTML = '<p class="stars"></p><blockquote></blockquote><p class="who"><span></span><small></small></p>';
+  card.querySelector(".stars").textContent = "★".repeat(r.stars || 5);
+  card.querySelector(".stars").setAttribute("aria-label", (r.stars || 5) + " out of 5 stars");
+  card.querySelector("blockquote").textContent = "“" + r.text + "”";
+  card.querySelector(".who span").textContent = r.name;
+  card.querySelector(".who small").textContent = "Google review" + (r.when ? " · " + r.when : "");
+  revGrid.append(card);
+});
 
 const menu = $("#menu"), menuBtn = $("#menuBtn");
 const setMenu = open => { menu.classList.toggle("open", open); menuBtn.setAttribute("aria-expanded", open); menuBtn.textContent = open ? "✕" : "☰"; };
