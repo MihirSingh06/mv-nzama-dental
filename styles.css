@@ -28,10 +28,10 @@ h2{font-size:clamp(2rem,4.2vw,3rem);margin-bottom:14px}
 header{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
 .nav{display:flex;align-items:center;justify-content:space-between;height:68px;gap:16px}
 .logo{text-decoration:none;line-height:1.1;display:flex;align-items:center;gap:10px}
-.logo .mark{width:38px;height:38px;border-radius:12px;background:var(--forest);color:#fff;display:grid;place-items:center;flex:none}
-.logo .mark svg{width:24px;height:24px}
-.logo b{font-family:Outfit,sans-serif;font-weight:700;font-size:1.25rem;color:var(--forest);display:block;letter-spacing:-.01em}
-.logo small{font-family:Caveat,cursive;font-size:1rem;color:var(--lime-ink);font-weight:600}
+/* logo: mark and wording follow the practice's own logo (green caps, "WE HONOUR YOUR TRUST") */
+.logo .mark{width:72px;height:45px;flex:none}
+.logo b{font-family:Outfit,sans-serif;font-weight:800;font-size:1.3rem;color:#21a627;display:block;letter-spacing:.01em;text-transform:uppercase}
+.logo small{display:block;font-size:.66rem;color:#188d24;font-weight:600;letter-spacing:.12em;text-transform:uppercase;margin-top:2px}
 .nav ul{display:flex;gap:24px;list-style:none}
 .nav ul a{text-decoration:none;font-size:.93rem;color:var(--muted);font-weight:500}
 .nav ul a:hover,.nav ul a[aria-current]{color:var(--forest)}
@@ -48,14 +48,15 @@ header{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.96);backdro
   .menu-btn{display:block;margin-left:auto}
   .nav{gap:10px}
   .logo b{font-size:1.05rem;white-space:nowrap}
-  .logo small{font-size:.9rem;white-space:nowrap}
-  .logo .mark{width:34px;height:34px}
+  .logo small{font-size:.56rem;white-space:nowrap}
+  .logo .mark{width:54px;height:34px}
   .nav .btn-primary{padding:9px 14px;font-size:.85rem;white-space:nowrap}
   .nav ul{display:none;position:absolute;top:100%;left:0;right:0;background:#fff;border-bottom:1px solid var(--line);flex-direction:column;gap:0;padding:8px 16px 14px}
   .nav ul.open{display:flex}
   .nav ul a{display:block;padding:12px 4px;font-size:1rem;border-bottom:1px solid var(--line)}
 }
-@media(max-width:400px){.logo .mark{display:none}}
+@media(max-width:400px){.logo{gap:6px}.logo .mark{width:40px;height:25px}.logo b{font-size:.92rem}.logo small{font-size:.5rem;letter-spacing:.08em}.nav .btn-primary{padding:8px 11px;font-size:.8rem}.nav{gap:8px}.menu-btn,.nav .btn-primary{flex:none}}
+@media(max-width:370px){.logo b{font-size:.84rem}.logo small{font-size:.46rem}}
 
 /* lightbox, footer, misc */
 .lb{position:fixed;inset:0;background:rgba(15,30,22,.92);display:none;align-items:center;justify-content:center;z-index:50;padding:20px;cursor:zoom-out}

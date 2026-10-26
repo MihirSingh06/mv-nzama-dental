@@ -42,7 +42,7 @@
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Inter:wght@400;500;600;700&family=Nunito:wght@600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 <link rel="preload" as="image" href="images/family.jpg">
 <script>document.documentElement.classList.add("js")</script>
@@ -62,12 +62,9 @@
 .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px;list-style:none}
 .chips li{background:#fff;border:1px solid var(--line);border-radius:999px;padding:7px 14px;font-size:.85rem;font-weight:600;color:var(--forest);display:flex;align-items:center;gap:6px}
 .chips li::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--lime)}
-.hero-art{position:relative;aspect-ratio:1.2/1;max-width:580px;justify-self:end;width:100%}
-.hero-art .main{position:absolute;inset:0 0 10% 0;border-radius:32px 160px 32px 32px;overflow:hidden;box-shadow:0 30px 60px rgba(31,66,49,.22)}
+.hero-art{position:relative;aspect-ratio:4/3;max-width:580px;justify-self:end;width:100%}
+.hero-art .main{position:absolute;inset:0;border-radius:32px 160px 32px 32px;overflow:hidden;box-shadow:0 30px 60px rgba(31,66,49,.22)}
 .hero-art .main img{width:100%;height:100%;object-fit:cover;object-position:50% 30%}
-.hero-art .inset{position:absolute;left:-10px;bottom:0;width:30%;background:#fff;border-radius:22px;padding:8px 8px 10px;box-shadow:0 16px 36px rgba(31,66,49,.2);transform:rotate(-3deg)}
-.hero-art .inset img{border-radius:16px;aspect-ratio:1;object-fit:cover;width:100%}
-.hero-art .inset small{display:block;font-family:Caveat,cursive;font-size:1.15rem;color:var(--forest);text-align:center;margin-top:4px;line-height:1.1}
 .hero-art .note{position:absolute;right:-10px;top:-14px;background:var(--lime);color:var(--forest-dark);border-radius:18px;padding:10px 16px;font-family:Caveat,cursive;font-size:1.45rem;font-weight:600;line-height:1.05;transform:rotate(4deg);box-shadow:0 10px 24px rgba(31,66,49,.18)}
 .ways{position:relative;margin-top:56px;display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
 .ways a{display:flex;gap:12px;align-items:center;padding:16px 18px;text-decoration:none;background:#fff;border-radius:18px;box-shadow:0 12px 30px rgba(31,66,49,.1);line-height:1.3;transition:transform .15s}
@@ -134,14 +131,15 @@
 .steps li::before{content:counter(s);display:grid;place-items:center;width:50px;height:50px;border-radius:50%;background:var(--lime);color:var(--forest-dark);font:700 1.25rem Outfit,sans-serif;margin-bottom:18px}
 .steps h3{font-size:1.5rem;margin-bottom:6px}
 .steps p{color:#cfe0d5;font-size:.95rem}
-.quote{margin-top:28px;display:grid;grid-template-columns:1fr 1.2fr;border-radius:28px;overflow:hidden;background:var(--lime);color:var(--forest-dark)}
-.quote .pic{min-height:300px;position:relative}
-.quote .pic img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 60%}
-.quote .body{padding:44px 40px;display:flex;flex-direction:column;justify-content:center;gap:20px;align-items:flex-start}
-.quote blockquote{font:700 clamp(1.7rem,3vw,2.5rem)/1.12 Outfit,sans-serif;letter-spacing:-.02em}
-.quote .acts{display:flex;gap:16px;flex-wrap:wrap;align-items:center}
-.quote .acts a.more{font-weight:600;color:var(--forest-dark)}
-@media(max-width:860px){.steps{grid-template-columns:1fr}.quote{grid-template-columns:1fr}.quote .pic{min-height:220px}.quote .body{padding:28px 24px}}
+@media(max-width:860px){.steps{grid-template-columns:1fr}}
+
+/* smile band: light green from the logo, peach card, softer rounded type */
+.smile-band{background:#d6f5cb;padding:72px 0}
+.quote{max-width:900px;margin:0 auto;background:#feefd8;border-radius:28px;padding:52px 48px;text-align:center;display:grid;gap:26px;justify-items:center;box-shadow:0 18px 40px rgba(15,99,22,.08)}
+.quote blockquote{font:700 clamp(1.7rem,3.4vw,2.6rem)/1.2 Nunito,sans-serif;color:#0f6316;max-width:16em}
+.quote .acts{display:flex;gap:18px;flex-wrap:wrap;align-items:center;justify-content:center}
+.quote .acts a.more{font-weight:600;color:#0f6316}
+@media(max-width:860px){.smile-band{padding:56px 0}.quote{padding:36px 22px}}
 
 /* booking */
 .book{background:var(--lime-soft)}
@@ -183,42 +181,28 @@
 .review.on{display:inline-block}
 @media(max-width:860px){.locs{grid-template-columns:1fr}.loc .map{height:260px}}
 
-/* gallery: before / during / after, then practice photos */
+/* gallery: before/after cards (one per treatment), then practice photos */
 .gal h2,.gal h3.sub{color:var(--forest-dark)}
-.gal h3.sub{font-size:clamp(1.6rem,3vw,2.2rem);margin:72px 0 6px}
+.gal h3.sub{font-size:clamp(1.6rem,3vw,2.2rem);margin:0 0 6px}
+.gal .pairs+h3.sub{margin-top:72px}
 .gal p.subp{color:var(--muted);margin-bottom:28px}
-.res-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:24px;align-items:stretch}
-.res-left,.res-right{display:flex;flex-direction:column;gap:24px}
-.duo{display:grid;grid-template-columns:1fr 1fr;gap:3px;background:#dce7e7}
-.duo figure{position:relative;aspect-ratio:4/3;overflow:hidden;cursor:zoom-in}
-.duo img{width:100%;height:100%;object-fit:cover}
-.duo span{position:absolute;left:10px;top:10px;background:var(--lime);color:var(--forest-dark);font-weight:700;font-size:.78rem;padding:4px 10px;border-radius:999px}
-.viewer,.res-card{background:var(--forest);border-radius:26px;overflow:hidden;display:flex;flex-direction:column;color:#fff}
-.frames{position:relative;aspect-ratio:1080/348;cursor:zoom-in}
-.frames img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .6s}
-.frames img.on{opacity:1}
-.tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;padding:14px}
-.tabs button{font:600 .95rem Inter,sans-serif;color:#d5e2d9;background:rgba(255,255,255,.08);border:0;border-radius:12px;padding:12px;cursor:pointer;position:relative;overflow:hidden}
-.tabs button[aria-selected=true]{background:var(--lime);color:var(--forest-dark)}
-.tabs button .bar{position:absolute;left:0;bottom:0;height:3px;width:0;background:var(--forest-dark)}
-.tabs button[aria-selected=true] .bar.run{animation:bar 3.2s linear forwards}
-@keyframes bar{to{width:100%}}
-.cap{padding:4px 20px 20px;color:#cfe0d5;font-size:.92rem}
+.pairs{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.pair{background:var(--forest);border-radius:26px;overflow:hidden;color:#fff;display:flex;flex-direction:column}
+.pair .shots{display:grid;gap:3px;background:#dce7e7}
+.pair figure{position:relative;aspect-ratio:2/1;overflow:hidden;cursor:zoom-in}
+.pair figure.solo{aspect-ratio:1/1.005}
+.pair img{width:100%;height:100%;object-fit:cover}
+.pair figure span{position:absolute;left:12px;top:12px;background:var(--lime);color:var(--forest-dark);font-weight:700;font-size:.78rem;padding:4px 11px;border-radius:999px}
+.pair figure span.after{background:#feefd8}
+.cap{padding:18px 22px 22px;color:#cfe0d5;font-size:.92rem}
 .cap b{color:#fff;font:700 1.3rem Outfit,sans-serif;display:block}
-.res-card .img{flex:1;display:flex;align-items:center;background:#dce7e7;cursor:zoom-in}
-.res-card img{width:100%}
-.res-card .cap{padding-top:18px}
-.res-card.fav .img{aspect-ratio:16/9;position:relative;overflow:hidden}
-.res-card.fav img{position:absolute;inset:0;height:100%;object-fit:cover;object-position:50% 25%}
 .photos{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:220px;gap:14px}
 .photos figure{position:relative;border-radius:22px;overflow:hidden;cursor:zoom-in}
 .photos figure.wide{grid-column:span 2}
-.photos figure.tall{grid-row:span 2}
 .photos img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s}
 .photos figure:hover img{transform:scale(1.05)}
 .photos figcaption{position:absolute;left:0;right:0;bottom:0;padding:44px 16px 14px;color:#fff;font-weight:600;font-size:.92rem;background:linear-gradient(transparent,rgba(0,0,0,.65))}
-@media(max-width:860px){.res-grid{grid-template-columns:1fr}.photos{grid-template-columns:1fr 1fr;grid-auto-rows:180px}}
-@media(max-width:480px){.photos{grid-template-columns:1fr}.photos figure.wide{grid-column:auto}.photos figure.tall{grid-row:span 1}}
+@media(max-width:860px){.pairs{grid-template-columns:1fr}.photos{grid-template-columns:1fr 1fr;grid-auto-rows:170px}}
 </style>
 </head>
 <body>
@@ -228,6 +212,8 @@
     <path id="tooth" d="M7 3c-2.5 0-4 2-4 4.5 0 2 .8 3.4 1.5 5.5.7 2.4.8 6 2.5 6 1.3 0 1.4-3.3 2.6-4.5.4-.4.9-.5 1.4-.5s1 .1 1.4.5c1.2 1.2 1.3 4.5 2.6 4.5 1.7 0 1.8-3.6 2.5-6 .7-2.1 1.5-3.5 1.5-5.5C21 5 19.5 3 17 3c-1.8 0-3.2 1-5 1S8.8 3 7 3z"/>
   </defs>
   <symbol id="i-tooth" viewBox="0 0 24 24"><use href="#tooth"/></symbol>
+  <!-- the practice's logo mark: three teeth over an arc, colours from their logo file -->
+  <symbol id="logo-mark" viewBox="0 0 64 40"><path d="M2 35Q32 3 62 35Q32 9 2 35z" fill="#0f6316"/><g fill="none" stroke-width="1.9"><use href="#tooth" stroke="#0f6316" transform="translate(19.4 2) scale(1.05)"/><use href="#tooth" stroke="#a90503" transform="translate(5 11) scale(.8)"/><use href="#tooth" stroke="#a90503" transform="translate(38 18) scale(.8)"/></g></symbol>
   <symbol id="i-consult" viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="17" rx="2.5"/><path d="M9 4.5V3h6v1.5"/><path d="M8.6 12.6l2.3 2.3 4.6-4.8"/></symbol>
   <symbol id="i-xray" viewBox="0 0 24 24"><path d="M3 8V4.5A1.5 1.5 0 0 1 4.5 3H8M16 3h3.5A1.5 1.5 0 0 1 21 4.5V8M21 16v3.5a1.5 1.5 0 0 1-1.5 1.5H16M8 21H4.5A1.5 1.5 0 0 1 3 19.5V16"/><use href="#tooth" transform="translate(6.6 6.6) scale(.45)" stroke-width="3.8"/></symbol>
   <symbol id="i-clean" viewBox="0 0 24 24"><use href="#tooth" transform="translate(0 4) scale(.8)" stroke-width="2.1"/><path d="M19 1.5l.9 2.1 2.1.9-2.1.9-.9 2.1-.9-2.1-2.1-.9 2.1-.9z"/><path d="M21.5 10v2M20.5 11h2"/></symbol>
@@ -256,7 +242,7 @@
 
 <header>
   <div class="wrap nav">
-    <a href="#top" class="logo"><span class="mark"><svg class="ic" style="width:24px;height:24px;stroke:#fff"><use href="#i-tooth"/></svg></span><span><b>MV Nzama Dental</b><small>We honour your trust</small></span></a>
+    <a href="#top" class="logo"><svg class="mark" viewBox="0 0 64 40" aria-hidden="true"><use href="#logo-mark"/></svg><span><b>MV Nzama Dental</b><small>We honour your trust</small></span></a>
     <ul id="menu">
       <li><a href="#about">About Us</a></li>
       <li><a href="#services">Services</a></li>
@@ -288,7 +274,6 @@
       <div class="hero-art">
         <div class="main"><img src="images/family.jpg" alt="A smiling family of four: father, mother, son and daughter" fetchpriority="high"></div>
         <p class="note">Smile, you're<br>in good hands</p>
-        <div class="inset"><img src="images/smile-inset.jpg" alt="A healthy, happy smile after treatment at MV Nzama Dental"><small>Healthy teeth, healthy families</small></div>
       </div>
     </div>
     <div class="ways">
@@ -381,14 +366,16 @@
       <li><h3>A clear assessment</h3><p>A clear oral assessment, with everything explained.</p></li>
       <li><h3>A plan made for you</h3><p>Treatment customised for you.</p></li>
     </ol>
+  </div>
+</section>
+
+<section class="smile-band">
+  <div class="wrap">
     <div class="quote rv">
-      <div class="pic"><img src="images/surgery-1.jpg" alt="Treatment room at MV Nzama Dental" loading="lazy"></div>
-      <div class="body">
-        <blockquote>A healthy smile is part of a healthy, confident life.</blockquote>
-        <div class="acts">
-          <a href="#book" class="btn btn-primary">Book your visit</a>
-          <a href="#gallery" class="more">See our gallery →</a>
-        </div>
+      <blockquote>A healthy smile is part of a healthy, confident life.</blockquote>
+      <div class="acts">
+        <a href="#book" class="btn btn-primary">Book your visit</a>
+        <a href="#gallery" class="more">See our gallery →</a>
       </div>
     </div>
   </div>
@@ -398,53 +385,48 @@
   <div class="wrap">
     <div class="head rv">
       <div><p class="eyebrow">Gallery</p><h2>Real smiles, made here.</h2></div>
-      <p>Before and after results from treatments done at the practice. Tap any photo to see it full size.</p>
+      <p>Results from treatments done at the practice, and a look around our Montclair rooms.</p>
     </div>
-    <div class="res-grid">
-      <div class="res-left">
-      <div class="viewer rv">
-        <div class="frames" id="frames">
-          <img class="on" src="images/smile-before.jpg" alt="Before: damaged and missing front teeth" loading="lazy">
-          <img src="images/smile-during.jpg" alt="During: teeth prepared for restoration" loading="lazy">
-          <img src="images/smile-after.jpg" alt="After: restored front teeth" loading="lazy">
-        </div>
-        <div class="tabs" role="tablist" aria-label="Treatment stage">
-          <button role="tab" aria-selected="true">Before<span class="bar"></span></button>
-          <button role="tab" aria-selected="false">During<span class="bar"></span></button>
-          <button role="tab" aria-selected="false">After<span class="bar"></span></button>
+    <h3 class="sub rv">Before &amp; after</h3>
+    <p class="subp rv">One card per treatment. Tap a photo to see it full size.</p>
+    <div class="pairs">
+      <div class="pair rv">
+        <div class="shots">
+          <figure data-zoom><img src="images/smile-before.jpg" alt="Before: damaged and missing front teeth" loading="lazy" style="object-position:0 50%"><span>Before</span></figure>
+          <figure data-zoom><img src="images/smile-after.jpg" alt="After: restored front teeth" loading="lazy" style="object-position:0 50%"><span class="after">After</span></figure>
         </div>
         <p class="cap"><b>Front teeth restoration</b>Damaged front teeth rebuilt and restored.</p>
       </div>
-      <div class="res-card fav rv">
-        <div class="img" data-zoom><img src="images/smile-fav.jpg" alt="Smiling patient after treatment at MV Nzama Dental" loading="lazy"></div>
-        <p class="cap"><b>All smiles</b>A happy, confident smile after a visit.</p>
-      </div>
-      </div>
-      <div class="res-right">
-      <div class="res-card rv">
-        <div class="img" data-zoom><img src="images/result-1.jpg" alt="Before and after scaling and polishing" loading="lazy"></div>
-        <p class="cap"><b>Scaling &amp; polishing</b>Heavy staining and build-up removed.</p>
-      </div>
-      <div class="res-card rv">
-        <div class="duo">
-          <figure data-zoom><img src="images/repair-before.jpg" alt="Before: chipped upper front teeth" loading="lazy"><span>Before</span></figure>
-          <figure data-zoom><img src="images/repair-after.jpg" alt="After: upper front teeth repaired" loading="lazy"><span>After</span></figure>
+      <div class="pair rv">
+        <div class="shots">
+          <figure data-zoom><img src="images/repair-before.jpg" alt="Before: chipped upper front teeth" loading="lazy" style="object-position:50% 55%"><span>Before</span></figure>
+          <figure data-zoom><img src="images/repair-after.jpg" alt="After: upper front teeth repaired" loading="lazy" style="object-position:50% 55%"><span class="after">After</span></figure>
         </div>
         <p class="cap"><b>Chipped teeth repaired</b>Broken front teeth rebuilt.</p>
       </div>
+      <div class="pair rv">
+        <div class="shots">
+          <figure data-zoom><img src="images/scale-before.jpg" alt="Before: heavy staining and build-up on the teeth" loading="lazy"><span>Before</span></figure>
+          <figure data-zoom><img src="images/scale-after.jpg" alt="After: teeth cleaned and polished" loading="lazy"><span class="after">After</span></figure>
+        </div>
+        <p class="cap"><b>Scaling &amp; polishing</b>Heavy staining and build-up removed.</p>
+      </div>
+      <div class="pair rv">
+        <div class="shots"><figure class="solo" data-zoom><img src="images/smile-fav.jpg" alt="Smiling patient after treatment at MV Nzama Dental" loading="lazy" style="object-position:50% 30%"></figure></div>
+        <p class="cap"><b>All smiles</b>A happy, confident smile after a visit.</p>
       </div>
     </div>
 
     <h3 class="sub rv">Our practice</h3>
     <p class="subp rv">Our Montclair practice at 139 Montclair Road. Both practices have safe parking, a wheelchair ramp to the front door and an accessible toilet.</p>
     <div class="photos rv">
-      <figure class="wide tall" data-zoom><img src="images/practice-ramp.jpg" alt="MV Nzama Dental in Montclair, with its sign, safe parking and a ramp to the front door" loading="lazy" style="object-position:50% 70%"><figcaption>Safe parking and a ramp to the front door</figcaption></figure>
+      <figure class="wide" data-zoom><img src="images/practice-ramp.jpg" alt="MV Nzama Dental in Montclair, with its sign, safe parking and a ramp to the front door" loading="lazy" style="object-position:50% 70%"><figcaption>Safe parking and a ramp to the front door</figcaption></figure>
       <figure data-zoom><img src="images/waiting-room.jpg" alt="Bright waiting area" loading="lazy"><figcaption>Waiting area</figcaption></figure>
       <figure data-zoom><img src="images/reception.jpg" alt="Reception desk" loading="lazy"><figcaption>Reception</figcaption></figure>
-      <figure class="wide" data-zoom><img src="images/surgery-1.jpg" alt="Modern dental chair and equipment" loading="lazy" style="object-position:50% 65%"><figcaption>Treatment room</figcaption></figure>
-      <figure class="wide tall" data-zoom><img src="images/practice-front.jpg" alt="Front entrance of MV Nzama Dental" loading="lazy" style="object-position:50% 65%"><figcaption>Our front entrance</figcaption></figure>
-      <figure class="tall" data-zoom><img src="images/signboard.jpg" alt="MV Nzama Dental sign: helping families to smile" loading="lazy"><figcaption>Look out for our sign</figcaption></figure>
-      <figure class="tall" data-zoom><img src="images/practice-street.jpg" alt="The practice seen from the street" loading="lazy" style="object-position:40% 60%"><figcaption>From the street</figcaption></figure>
+      <figure data-zoom><img src="images/surgery-1.jpg" alt="Modern dental chair and equipment" loading="lazy" style="object-position:50% 65%"><figcaption>Treatment room</figcaption></figure>
+      <figure data-zoom><img src="images/practice-front.jpg" alt="Front entrance of MV Nzama Dental" loading="lazy" style="object-position:50% 65%"><figcaption>Our front entrance</figcaption></figure>
+      <figure data-zoom><img src="images/signboard.jpg" alt="MV Nzama Dental sign: helping families to smile" loading="lazy"><figcaption>Look out for our sign</figcaption></figure>
+      <figure data-zoom><img src="images/practice-street.jpg" alt="The practice seen from the street" loading="lazy" style="object-position:40% 60%"><figcaption>From the street</figcaption></figure>
     </div>
   </div>
 </section>
@@ -528,26 +510,5 @@
 </a>
 
 <script src="site.js"></script>
-<script>
-$("#frames").addEventListener("click", () => zoom({src:"images/result-2.jpg", alt:"Before, during and after restoration of front teeth"}));
-
-/* before / during / after viewer: plays while on screen, stops once a visitor picks a stage */
-const frames = [...$$("#frames img")], tabs = [...$$(".tabs button")];
-let stage = 0, timer = null, manual = false;
-const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
-function go(i){
-  stage = i;
-  frames.forEach((f, n) => f.classList.toggle("on", n === i));
-  tabs.forEach((t, n) => {
-    t.setAttribute("aria-selected", n === i);
-    const bar = t.firstElementChild; bar.classList.remove("run");
-    if(n === i && timer){ void bar.offsetWidth; bar.classList.add("run"); }
-  });
-}
-const play = () => { if(manual || reduce || timer) return; timer = setInterval(() => go((stage + 1) % 3), 3200); go(stage); };
-const stop = () => { clearInterval(timer); timer = null; go(stage); };
-tabs.forEach((t, n) => t.addEventListener("click", () => { manual = true; stop(); go(n); }));
-new IntersectionObserver(([e]) => e.isIntersecting ? play() : stop(), {threshold:.4}).observe($("#frames"));
-</script>
 </body>
 </html>
