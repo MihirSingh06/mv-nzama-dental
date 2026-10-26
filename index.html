@@ -54,8 +54,9 @@
 .tag{display:inline-flex;align-items:center;gap:8px;background:var(--forest);color:#fff;border-radius:999px;padding:7px 16px 7px 12px;font-weight:600;font-size:.88rem;margin-bottom:22px}
 .tag .ic{width:18px;height:18px;color:var(--lime)}
 .hero h1{font-size:clamp(2.6rem,6vw,4.6rem);margin-bottom:18px;color:var(--forest-dark)}
-.hl{position:relative;white-space:nowrap}
-.hl::after{content:"";position:absolute;left:-2px;right:-2px;bottom:.06em;height:.32em;background:var(--lime);opacity:.55;border-radius:6px;z-index:-1}
+/* client: "whole family" and "1996" in light gold */
+.hl{position:relative;white-space:nowrap;color:var(--gold)}
+.gold-year{color:var(--gold);font-weight:700;font-style:italic}
 .hero h1 span{position:relative;z-index:0}
 .hero p.sub{font-size:1.15rem;max-width:470px;color:var(--muted);margin-bottom:28px}
 .hero-actions{display:flex;gap:12px;flex-wrap:wrap}
@@ -262,7 +263,7 @@
       <div>
         <p class="tag"><svg class="ic"><use href="#i-heart"/></svg>Gentle dentistry, genuine care</p>
         <h1>Healthy smiles for the <span class="hl">whole family.</span></h1>
-        <p class="sub">A family-orientated practice, caring for smiles since 1996. Visit us in Montclair or Umlazi.</p>
+        <p class="sub">A family-orientated practice, caring for smiles since <em class="gold-year">1996</em>. Visit us in Montclair or Umlazi.</p>
         <div class="hero-actions">
           <a href="#book" class="btn btn-primary">Book an appointment</a>
           <a class="btn btn-wa" data-wa href="#" target="_blank" rel="noopener">WhatsApp us</a>

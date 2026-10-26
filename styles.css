@@ -2,7 +2,7 @@
    Palette from the client's reference (cream, lime, forest green). */
 :root{
   --forest:#2d5a43; --forest-dark:#1f4231; --lime:#8cb811; --lime-ink:#4f6d08; --lime-soft:#eaf1d3;
-  --cream:#f4efe3; --sand:#e8dfca; --ink:#1d2a22; --muted:#5d6a61; --line:#ddd5c2; --wa:#25d366;
+  --gold:#d4a93a; --cream:#f4efe3; --sand:#e8dfca; --ink:#1d2a22; --muted:#5d6a61; --line:#ddd5c2; --wa:#25d366;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
