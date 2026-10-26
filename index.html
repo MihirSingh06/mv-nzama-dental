@@ -197,28 +197,32 @@
 .loc .acts{display:flex;gap:10px;flex-wrap:wrap}
 @media(max-width:860px){.locs{grid-template-columns:1fr}.loc .map{height:260px}}
 
-/* gallery: before/after cards (one per treatment), then practice photos */
-.gal h2,.gal h3.sub{color:var(--forest-dark)}
-.gal h3.sub{font-size:clamp(1.6rem,3vw,2.2rem);margin:0 0 6px}
-.gal .pairs+h3.sub{margin-top:72px}
-.gal p.subp{color:var(--muted);margin-bottom:28px}
-.pairs{display:grid;grid-template-columns:1fr 1fr;gap:24px}
-.pair{background:var(--forest);border-radius:26px;overflow:hidden;color:#fff;display:flex;flex-direction:column}
-.pair .shots{display:grid;gap:3px;background:#dce7e7}
-.pair figure{position:relative;aspect-ratio:2/1;overflow:hidden;cursor:zoom-in}
-.pair figure.solo{aspect-ratio:1/1.005}
-.pair img{width:100%;height:100%;object-fit:cover}
-.pair figure span{position:absolute;left:12px;top:12px;background:var(--lime);color:var(--forest-dark);font-weight:700;font-size:.78rem;padding:4px 11px;border-radius:999px}
-.pair figure span.after{background:#feefd8}
-.cap{padding:18px 22px 22px;color:#cfe0d5;font-size:.92rem}
-.cap b{color:#fff;font:700 1.3rem Outfit,sans-serif;display:block}
-.photos{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:220px;gap:14px}
-.photos figure{position:relative;border-radius:22px;overflow:hidden;cursor:zoom-in}
-.photos figure.wide{grid-column:span 2}
-.photos img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s}
-.photos figure:hover img{transform:scale(1.05)}
-.photos figcaption{position:absolute;left:0;right:0;bottom:0;padding:44px 16px 14px;color:#fff;font-weight:600;font-size:.92rem;background:linear-gradient(transparent,rgba(0,0,0,.65))}
-@media(max-width:860px){.pairs{grid-template-columns:1fr}.photos{grid-template-columns:1fr 1fr;grid-auto-rows:170px}}
+/* gallery: one compact carousel per set (smile results / our practice), switched by tabs */
+.gal h2{color:var(--forest-dark)}
+.gal-tabs{display:flex;gap:8px;justify-content:center;margin-bottom:22px}
+.gal-tabs button{font:600 .95rem Inter,sans-serif;border:1.5px solid var(--line);background:#fff;color:var(--forest);border-radius:999px;padding:10px 20px;cursor:pointer}
+.gal-tabs button[aria-selected=true]{background:var(--forest);border-color:var(--forest);color:#fff}
+.carousel{max-width:620px;margin:0 auto}
+.carousel[hidden]{display:none}
+.track{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;border-radius:26px;background:var(--forest);scrollbar-width:none}
+.track::-webkit-scrollbar{display:none}
+.slide{flex:0 0 100%;scroll-snap-align:start;color:#fff}
+.media{aspect-ratio:2/1;display:grid;gap:3px;background:#dce7e7}
+.media.side{grid-template-columns:1fr 1fr}
+.media.stack{grid-template-rows:1fr 1fr}
+.media figure{position:relative;overflow:hidden;cursor:zoom-in;min-height:0}
+.media img{width:100%;height:100%;object-fit:cover}
+.media span{position:absolute;left:12px;top:12px;background:var(--lime);color:var(--forest-dark);font-weight:700;font-size:.78rem;padding:4px 11px;border-radius:999px}
+.media span.after{background:#feefd8}
+.cap{padding:16px 22px 20px;color:#cfe0d5;font-size:.92rem}
+.cap b{color:#fff;font:700 1.2rem Outfit,sans-serif;display:block}
+.ctrl{display:flex;align-items:center;justify-content:center;gap:16px;margin-top:16px}
+.ctrl>button{width:44px;height:44px;border-radius:50%;border:1.5px solid var(--forest);background:#fff;color:var(--forest);font-size:1.3rem;line-height:1;cursor:pointer}
+.ctrl>button:disabled{opacity:.3;cursor:default}
+.dots{display:flex;gap:8px;align-items:center}
+.dots button{width:9px;height:9px;padding:0;border:0;border-radius:5px;background:var(--line);cursor:pointer;transition:width .2s}
+.dots button[aria-current=true]{width:24px;background:var(--forest)}
+@media(prefers-reduced-motion:reduce){.track{scroll-behavior:auto}}
 </style>
 </head>
 <body>
@@ -404,46 +408,39 @@
       <div><p class="eyebrow">Gallery</p><h2>Real smiles, made here.</h2></div>
       <p>Results from treatments done at the practice, and a look around our Montclair rooms.</p>
     </div>
-    <h3 class="sub rv">Before &amp; after</h3>
-    <p class="subp rv">One card per treatment. Tap a photo to see it full size.</p>
-    <div class="pairs">
-      <div class="pair rv">
-        <div class="shots">
-          <figure data-zoom><img src="images/smile-before.jpg" alt="Before: damaged and missing front teeth" loading="lazy" style="object-position:0 50%"><span>Before</span></figure>
-          <figure data-zoom><img src="images/smile-after.jpg" alt="After: restored front teeth" loading="lazy" style="object-position:0 50%"><span class="after">After</span></figure>
-        </div>
-        <p class="cap"><b>Front teeth restoration</b>Damaged front teeth rebuilt and restored.</p>
-      </div>
-      <div class="pair rv">
-        <div class="shots">
+    <div class="gal-tabs rv" role="tablist" aria-label="Gallery">
+      <button type="button" role="tab" aria-selected="true" aria-controls="set-results">Smile results</button>
+      <button type="button" role="tab" aria-selected="false" aria-controls="set-practice">Our practice</button>
+    </div>
+    <div class="carousel rv" id="set-results" role="tabpanel" aria-label="Smile results">
+      <div class="track" tabindex="0">
+        <div class="slide"><div class="media"><figure data-zoom><img src="images/smile-fav.jpg" alt="Smiling patient after treatment at MV Nzama Dental" loading="lazy" style="object-position:50% 30%"></figure></div><p class="cap"><b>All smiles</b>A happy, confident smile after a visit.</p></div>
+        <div class="slide"><div class="media stack">
+          <figure data-zoom><img src="images/smile-before.jpg" alt="Before: damaged and missing front teeth" loading="lazy"></figure>
+          <figure data-zoom><img src="images/smile-after.jpg" alt="After: restored front teeth" loading="lazy"></figure>
+        </div><p class="cap"><b>Front teeth restoration</b>Damaged front teeth rebuilt and restored.</p></div>
+        <div class="slide"><div class="media side">
           <figure data-zoom><img src="images/repair-before.jpg" alt="Before: chipped upper front teeth" loading="lazy" style="object-position:50% 55%"><span>Before</span></figure>
           <figure data-zoom><img src="images/repair-after.jpg" alt="After: upper front teeth repaired" loading="lazy" style="object-position:50% 55%"><span class="after">After</span></figure>
-        </div>
-        <p class="cap"><b>Chipped teeth repaired</b>Broken front teeth rebuilt.</p>
-      </div>
-      <div class="pair rv">
-        <div class="shots">
+        </div><p class="cap"><b>Chipped teeth repaired</b>Broken front teeth rebuilt.</p></div>
+        <div class="slide"><div class="media side">
           <figure data-zoom><img src="images/scale-before.jpg" alt="Before: heavy staining and build-up on the teeth" loading="lazy"><span>Before</span></figure>
           <figure data-zoom><img src="images/scale-after.jpg" alt="After: teeth cleaned and polished" loading="lazy"><span class="after">After</span></figure>
-        </div>
-        <p class="cap"><b>Scaling &amp; polishing</b>Heavy staining and build-up removed.</p>
+        </div><p class="cap"><b>Scaling &amp; polishing</b>Heavy staining and build-up removed.</p></div>
       </div>
-      <div class="pair rv">
-        <div class="shots"><figure class="solo" data-zoom><img src="images/smile-fav.jpg" alt="Smiling patient after treatment at MV Nzama Dental" loading="lazy" style="object-position:50% 30%"></figure></div>
-        <p class="cap"><b>All smiles</b>A happy, confident smile after a visit.</p>
-      </div>
+      <div class="ctrl"><button class="prev" type="button" aria-label="Previous photo">&#8249;</button><div class="dots"></div><button class="next" type="button" aria-label="Next photo">&#8250;</button></div>
     </div>
-
-    <h3 class="sub rv">Our practice</h3>
-    <p class="subp rv">Our Montclair practice at 139 Montclair Road. Both practices have safe parking, a wheelchair ramp to the front door and an accessible toilet.</p>
-    <div class="photos rv">
-      <figure class="wide" data-zoom><img src="images/practice-ramp.jpg" alt="MV Nzama Dental in Montclair, with its sign, safe parking and a ramp to the front door" loading="lazy" style="object-position:50% 70%"><figcaption>Safe parking and a ramp to the front door</figcaption></figure>
-      <figure data-zoom><img src="images/waiting-room.jpg" alt="Bright waiting area" loading="lazy"><figcaption>Waiting area</figcaption></figure>
-      <figure data-zoom><img src="images/reception.jpg" alt="Reception desk" loading="lazy"><figcaption>Reception</figcaption></figure>
-      <figure data-zoom><img src="images/surgery-1.jpg" alt="Modern dental chair and equipment" loading="lazy" style="object-position:50% 65%"><figcaption>Treatment room</figcaption></figure>
-      <figure data-zoom><img src="images/practice-front.jpg" alt="Front entrance of MV Nzama Dental" loading="lazy" style="object-position:50% 65%"><figcaption>Our front entrance</figcaption></figure>
-      <figure data-zoom><img src="images/signboard.jpg" alt="MV Nzama Dental sign: helping families to smile" loading="lazy"><figcaption>Look out for our sign</figcaption></figure>
-      <figure data-zoom><img src="images/practice-street.jpg" alt="The practice seen from the street" loading="lazy" style="object-position:40% 60%"><figcaption>From the street</figcaption></figure>
+    <div class="carousel rv" id="set-practice" role="tabpanel" aria-label="Our practice" hidden>
+      <div class="track" tabindex="0">
+        <div class="slide"><div class="media"><figure data-zoom><img src="images/practice-ramp.jpg" alt="MV Nzama Dental in Montclair, with its sign, safe parking and a ramp to the front door" loading="lazy" style="object-position:50% 70%"></figure></div><p class="cap"><b>139 Montclair Road</b>Safe parking and a ramp to the front door.</p></div>
+        <div class="slide"><div class="media"><figure data-zoom><img src="images/waiting-room.jpg" alt="Bright waiting area" loading="lazy"></figure></div><p class="cap"><b>Waiting area</b></p></div>
+        <div class="slide"><div class="media"><figure data-zoom><img src="images/reception.jpg" alt="Reception desk" loading="lazy"></figure></div><p class="cap"><b>Reception</b></p></div>
+        <div class="slide"><div class="media"><figure data-zoom><img src="images/surgery-1.jpg" alt="Modern dental chair and equipment" loading="lazy" style="object-position:50% 65%"></figure></div><p class="cap"><b>Treatment room</b></p></div>
+        <div class="slide"><div class="media"><figure data-zoom><img src="images/practice-front.jpg" alt="Front entrance of MV Nzama Dental" loading="lazy" style="object-position:50% 65%"></figure></div><p class="cap"><b>Our front entrance</b></p></div>
+        <div class="slide"><div class="media"><figure data-zoom><img src="images/signboard.jpg" alt="MV Nzama Dental sign: helping families to smile" loading="lazy" style="object-position:50% 40%"></figure></div><p class="cap"><b>Look out for our sign</b></p></div>
+        <div class="slide"><div class="media"><figure data-zoom><img src="images/practice-street.jpg" alt="The practice seen from the street" loading="lazy" style="object-position:40% 60%"></figure></div><p class="cap"><b>From the street</b></p></div>
+      </div>
+      <div class="ctrl"><button class="prev" type="button" aria-label="Previous photo">&#8249;</button><div class="dots"></div><button class="next" type="button" aria-label="Next photo">&#8250;</button></div>
     </div>
   </div>
 </section>
@@ -543,5 +540,28 @@
 </a>
 
 <script src="site.js"></script>
+<script>
+/* gallery carousels: swipe or scroll the track; arrows, dots and arrow keys move one slide */
+const syncs = new Map();
+$$(".carousel").forEach(c => {
+  const track = c.querySelector(".track"), slides = [...track.children], dots = c.querySelector(".dots");
+  const prev = c.querySelector(".prev"), next = c.querySelector(".next");
+  const cur = () => Math.round(track.scrollLeft / (track.clientWidth || 1));
+  const go = i => track.scrollTo({left: Math.max(0, Math.min(i, slides.length - 1)) * track.clientWidth});
+  slides.forEach((s, i) => {
+    const d = document.createElement("button"); d.type = "button";
+    d.setAttribute("aria-label", "Photo " + (i + 1) + " of " + slides.length); d.onclick = () => go(i); dots.append(d);
+  });
+  const sync = () => { const i = cur(); [...dots.children].forEach((d, n) => d.setAttribute("aria-current", n === i)); prev.disabled = i === 0; next.disabled = i === slides.length - 1; };
+  prev.onclick = () => go(cur() - 1); next.onclick = () => go(cur() + 1);
+  track.addEventListener("scroll", () => requestAnimationFrame(sync));
+  track.addEventListener("keydown", e => { if(e.key === "ArrowRight") go(cur() + 1); if(e.key === "ArrowLeft") go(cur() - 1); });
+  syncs.set(c.id, sync); sync();
+});
+$$(".gal-tabs button").forEach(t => t.addEventListener("click", () => {
+  $$(".gal-tabs button").forEach(b => { const on = b === t; b.setAttribute("aria-selected", on); $("#" + b.getAttribute("aria-controls")).hidden = !on; });
+  const c = $("#" + t.getAttribute("aria-controls")); c.classList.add("in"); syncs.get(c.id)();
+}));
+</script>
 </body>
 </html>
