@@ -107,3 +107,8 @@ Supersedes "Files", "Page sections" and "Design notes" above.
 ## Round 6 (2026-10-27)
 - Client: the gallery was "too in their face" and should be a carousel. The 2x2 before/after grid and the practice photo grid were replaced by two compact carousels (max 620px wide, 2:1 photo area, one slide at a time) switched by tabs: "Smile results" (opens on the friendly "All smiles" photo, then front teeth, chipped teeth, scaling) and "Our practice" (7 photos). Swipe/scroll with CSS scroll-snap, plus arrows, dots and arrow keys; no autoplay. Script is inline at the bottom of index.html. Keep captions to one line so slides stay the same height.
 - To add a before/after pair: copy a `.slide` with `.media.side` (two photos side by side) into `#set-results .track`; `.media.stack` stacks wide strips (used for the front teeth photos, which have "Before"/"After" written on them, so no label chips).
+
+## Round 7 (2026-10-27)
+- Carousel widened from 620px to 740px max. The card is now white with a thin border and soft shadow (it used to be a dark green caption block), so it feels less heavy.
+- Three new before/after pairs from the client: "Gaps closed" (`gap2-*`, stacked strips), "Smile rebuilt" (`gap-*`, stacked strips) and "Deep clean" (`clean-*`, side by side, lower-teeth tartar). The captions were worked out from the photos; confirm with the practice. The "Gaps closed" after photo is soft, so ask for a sharper copy.
+- "Smile results" now opens on "Gaps closed" (small strips of teeth) rather than the big "All smiles" close-up, which moved to the end, because the client wanted the gallery to feel less in your face.

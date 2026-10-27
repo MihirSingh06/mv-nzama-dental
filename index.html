@@ -202,11 +202,11 @@
 .gal-tabs{display:flex;gap:8px;justify-content:center;margin-bottom:22px}
 .gal-tabs button{font:600 .95rem Inter,sans-serif;border:1.5px solid var(--line);background:#fff;color:var(--forest);border-radius:999px;padding:10px 20px;cursor:pointer}
 .gal-tabs button[aria-selected=true]{background:var(--forest);border-color:var(--forest);color:#fff}
-.carousel{max-width:620px;margin:0 auto}
+.carousel{max-width:740px;margin:0 auto}
 .carousel[hidden]{display:none}
-.track{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;border-radius:26px;background:var(--forest);scrollbar-width:none}
+.track{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;border-radius:22px;background:#fff;border:1px solid var(--line);box-shadow:0 14px 34px -22px rgba(31,66,49,.35);scrollbar-width:none}
 .track::-webkit-scrollbar{display:none}
-.slide{flex:0 0 100%;scroll-snap-align:start;color:#fff}
+.slide{flex:0 0 100%;scroll-snap-align:start}
 .media{aspect-ratio:2/1;display:grid;gap:3px;background:#dce7e7}
 .media.side{grid-template-columns:1fr 1fr}
 .media.stack{grid-template-rows:1fr 1fr}
@@ -214,10 +214,10 @@
 .media img{width:100%;height:100%;object-fit:cover}
 .media span{position:absolute;left:12px;top:12px;background:var(--lime);color:var(--forest-dark);font-weight:700;font-size:.78rem;padding:4px 11px;border-radius:999px}
 .media span.after{background:#feefd8}
-.cap{padding:16px 22px 20px;color:#cfe0d5;font-size:.92rem}
-.cap b{color:#fff;font:700 1.2rem Outfit,sans-serif;display:block}
+.cap{padding:14px 22px 16px;color:var(--muted);font-size:.9rem}
+.cap b{color:var(--forest-dark);font:600 1.08rem Outfit,sans-serif;display:block}
 .ctrl{display:flex;align-items:center;justify-content:center;gap:16px;margin-top:16px}
-.ctrl>button{width:44px;height:44px;border-radius:50%;border:1.5px solid var(--forest);background:#fff;color:var(--forest);font-size:1.3rem;line-height:1;cursor:pointer}
+.ctrl>button{width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:#fff;color:var(--forest);font-size:1.3rem;line-height:1;cursor:pointer}
 .ctrl>button:disabled{opacity:.3;cursor:default}
 .dots{display:flex;gap:8px;align-items:center}
 .dots button{width:9px;height:9px;padding:0;border:0;border-radius:5px;background:var(--line);cursor:pointer;transition:width .2s}
@@ -414,11 +414,18 @@
     </div>
     <div class="carousel rv" id="set-results" role="tabpanel" aria-label="Smile results">
       <div class="track" tabindex="0">
-        <div class="slide"><div class="media"><figure data-zoom><img src="images/smile-fav.jpg" alt="Smiling patient after treatment at MV Nzama Dental" loading="lazy" style="object-position:50% 30%"></figure></div><p class="cap"><b>All smiles</b>A happy, confident smile after a visit.</p></div>
+        <div class="slide"><div class="media stack">
+          <figure data-zoom><img src="images/gap2-before.jpg" alt="Before: chipped upper front teeth with gaps between them" loading="lazy"><span>Before</span></figure>
+          <figure data-zoom><img src="images/gap2-after.jpg" alt="After: upper front teeth rebuilt with the gaps closed" loading="lazy"><span class="after">After</span></figure>
+        </div><p class="cap"><b>Gaps closed</b>Chipped front teeth rebuilt, gaps closed.</p></div>
         <div class="slide"><div class="media stack">
           <figure data-zoom><img src="images/smile-before.jpg" alt="Before: damaged and missing front teeth" loading="lazy"></figure>
           <figure data-zoom><img src="images/smile-after.jpg" alt="After: restored front teeth" loading="lazy"></figure>
         </div><p class="cap"><b>Front teeth restoration</b>Damaged front teeth rebuilt and restored.</p></div>
+        <div class="slide"><div class="media stack">
+          <figure data-zoom><img src="images/gap-before.jpg" alt="Before: broken and uneven upper front teeth" loading="lazy"><span>Before</span></figure>
+          <figure data-zoom><img src="images/gap-after.jpg" alt="After: upper front teeth restored to an even smile" loading="lazy"><span class="after">After</span></figure>
+        </div><p class="cap"><b>Smile rebuilt</b>Broken, uneven front teeth restored.</p></div>
         <div class="slide"><div class="media side">
           <figure data-zoom><img src="images/repair-before.jpg" alt="Before: chipped upper front teeth" loading="lazy" style="object-position:50% 55%"><span>Before</span></figure>
           <figure data-zoom><img src="images/repair-after.jpg" alt="After: upper front teeth repaired" loading="lazy" style="object-position:50% 55%"><span class="after">After</span></figure>
@@ -427,6 +434,11 @@
           <figure data-zoom><img src="images/scale-before.jpg" alt="Before: heavy staining and build-up on the teeth" loading="lazy"><span>Before</span></figure>
           <figure data-zoom><img src="images/scale-after.jpg" alt="After: teeth cleaned and polished" loading="lazy"><span class="after">After</span></figure>
         </div><p class="cap"><b>Scaling &amp; polishing</b>Heavy staining and build-up removed.</p></div>
+        <div class="slide"><div class="media side">
+          <figure data-zoom><img src="images/clean-before.jpg" alt="Before: heavy tartar on the lower front teeth" loading="lazy"><span>Before</span></figure>
+          <figure data-zoom><img src="images/clean-after.jpg" alt="After: lower front teeth cleaned" loading="lazy"><span class="after">After</span></figure>
+        </div><p class="cap"><b>Deep clean</b>Heavy tartar cleared from the lower teeth.</p></div>
+        <div class="slide"><div class="media"><figure data-zoom><img src="images/smile-fav.jpg" alt="Smiling patient after treatment at MV Nzama Dental" loading="lazy" style="object-position:50% 30%"></figure></div><p class="cap"><b>All smiles</b>A happy, confident smile after a visit.</p></div>
       </div>
       <div class="ctrl"><button class="prev" type="button" aria-label="Previous photo">&#8249;</button><div class="dots"></div><button class="next" type="button" aria-label="Next photo">&#8250;</button></div>
     </div>
